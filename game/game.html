@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <meta charset="UTF-8">
+    <title>Map</title>
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+    <link rel="stylesheet" type="text/css" href="style/hud.css">
+    <link rel="stylesheet" type="text/css" href="style/endscreen.css">
+</head>
+
+<body oncontextmenu="return false" >
+<div id="hud">
+    <a id="score"></a>
+    <table id="healthtableOverlayer">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <div id="glow"></div>
+
+    <table id="healthtable">
+        <tr>
+            <td id="healthbar0"></td>
+            <td id="healthbar1"></td>
+            <td id="healthbar2"></td>
+            <td id="healthbar3"></td>
+            <td id="healthbar4"></td>
+            <td id="healthbar5"></td>
+            <td id="healthbar6"></td>
+            <td id="healthbar7"></td>
+            <td id="healthbar8"></td>
+            <td id="healthbar9"></td>
+        </tr>
+    </table>
+
+    <div id="effectBox">
+    </div>
+</div>
+
+<div id="gameboxOverlayer"></div>
+<div id="gameboxOverlayerStun"></div>
+
+<div id="gamebox">
+
+    <div id="debug">
+        <a class="debug">DEBUG </a>
+        <a id="time" class="debug"></a>
+        <a id="debug0" class="debug"></a>
+        <a id="debug1" class="debug"></a>
+        <a id="debug2" class="debug"></a>
+        <a id="debug3" class="debug"></a>
+        <a id="debug4" class="debug"></a>
+        <a id="debug5" class="debug"></a>
+        <a id="debug6" class="debug"></a>
+        <a id="debug7" class="debug"></a>
+        <a id="debug8" class="debug"></a>
+        <a id="debug9" class="debug"></a>
+        <a>|</a>
+    </div>
+    <div id="debugExtend">
+        <a class="debugExtend">DEBUG Extend:</a><br>
+        <a id="debugExtend0" class="debugExtend">last down: </a><br>
+        <a id="debugExtend1" class="debugExtend">last up: </a><br>
+        <a id="debugExtend2" class="debugExtend"></a><br>
+        <a id="debugExtend3" class="debugExtend"></a><br>
+        <a id="debugExtend4" class="debugExtend"></a><br>
+        <a id="debugExtend5" class="debugExtend"></a><br>
+        <a id="debugExtend6" class="debugExtend"></a><br>
+        <a id="debugExtend7" class="debugExtend"></a><br>
+        <a id="debugExtend8" class="debugExtend"></a><br>
+        <a id="debugExtend9" class="debugExtend"></a>
+    </div>
+
+<div id="player"></div>
+</div>
+</body>
+
+
+</html>
+
+<script src="variable.js"></script>
+<script src="getInput.js"></script>
+<script src="scriptLibrary/standard.js"></script>
+<script src="scriptLibrary/collision.js"></script>
+<script src="scriptLibrary/move.js"></script>
+<script src="scriptLibrary/spawn.js"></script>
+<script src="scriptLibrary/balls.js"></script>
+<script src="scriptLibrary/spawn.js"></script>
+<script src="scriptLibrary/round.js"></script>
+<script src="scriptLibrary/hp.js"></script>
+<script src="scriptLibrary/shot.js"></script>
+<script src="scriptLibrary/powerUp.js"></script>
+<script src="scriptLibrary/effects.js"></script>
+<script src="scriptLibrary/debug.js"></script>
+
+
+
+
+<script>
+    //startup
+    document.getElementById("player").style.top = "730px";
+    document.getElementById("player").style.left = "1570px";
+    showHealth();
+
+    //sleep function
+
+    function wait(resolve, reject)
+    {
+        setTimeout(resolve,ms)
+    }
+
+    function sleep(ms) {
+        return new Promise(
+           x => { setTimeout(x, ms)}
+        )
+    }
+    //main function
+
+    //noinspection BadExpressionStatementJS
+    async function game() {
+        while(_live){
+            //head*******************************************
+
+            _time += _gameSpeed;
+            glowHealth();
+            //_gameSpeed = 20 - (_time/2000)
+            movePlayer();
+
+            //document.getElementById("gamebox").style.filter = "hue-rotate("+(_time/10%360)+"deg)";
+
+            //body*******************************************
+            fps();
+            shot();
+            getRound();
+
+            //Could be parallel
+
+            clock = (new Date()).getTime();
+
+            moveShot();
+            moveInfinityBall();
+
+            moveBall();
+            movePushBall();
+
+            moveFastBall();
+            moveFollowBall();
+
+
+            //console.log((new Date()).getTime()-clock);
+
+            changePlayerColor();
+            powerupCollect();
+            removeVignette();
+
+
+            //console.log("test");
+
+
+
+
+
+            //foot********************************************
+
+            //noinspection BadExpressionStatementJS,UnterminatedStatementJS
+            await sleep(_gameSpeed);
+        }
+
+    }
+    game();
+</script>
+
+<div id="endscreen">
+
+</div>

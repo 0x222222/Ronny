@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="scriptLibrary/debug.js"></script>
+</head>
+<body>
+    <div style="width: 100px; height: 100px; background-color: red;" id="player"></div>
+</body>
+</html>
+
+<script>
+
+    //iteration = 1000;
+    //iteration = 1000000;
+    iteration = 1000000000;
+    //iteration = 1000000000000;
+    console.log(iteration);
+
+    //benchmark("getDom", iteration);
+    benchmark("set", iteration);
+    benchmark("getDomPreset", iteration);
+    //benchmark("setDom", iteration);
+    benchmark("if1", iteration);
+    benchmark("if10", iteration);
+    benchmark("if100", iteration);
+    benchmark("ifMulti5", iteration);
+    benchmark("switchMulti5", iteration);
+
+
+
+
+    //function sleep(ms) {
+    //    return new Promise(
+    //            resolve => setTimeout(resolve, ms)
+    //)
+    //}
+    ////main function
+//
+    //async function game() {
+    //    while(true){
+//
+    //        await
+    //        //sleep(1000);
+    //    }
+//
+    //}
+    //game();
+</script>

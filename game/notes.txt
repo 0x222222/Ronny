@@ -1,0 +1,11 @@
+Controll:
+
+top:        w
+down:       s
+left:       a
+right:      d
+
+rush:       space
+jump:       c
+
+shot:       left click

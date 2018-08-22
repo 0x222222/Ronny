@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    background-color: black;
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+/*noinspection CssUnusedSymbol,CssUnusedSymbol*/
+#player, .ball, .infintyball {
+    animation-duration: 4s;
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#gamebox {
+    margin: 0;
+    width: 3200px;
+    height: 1520px;
+    overflow: hidden;
+    background: url("../assets/background.png") no-repeat;
+    background-size: 3800px 1820px;
+    z-index: 100;
+    border-bottom: 20px #222222 solid;
+    box-shadow: inset 0 0 35px black;
+}
+
+/*noinspection CssUnusedSymbol*/
+.ball{
+    border-radius: 50%;
+    box-shadow: 0 0 50px black;
+}
+
+#player {
+    background-image: url("../assets/blueBall.png");
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: 730px;
+    left: 1570px;
+    z-index: 50;
+    border-radius: 50%;
+    box-shadow: 0 0 30px yellow;
+}
+
+/*noinspection CssUnusedSymbol,CssUnusedSymbol*/
+.ball, .fastBall {
+    width: 70px;
+    height: 70px;
+    position: fixed;
+}
+
+/*noinspection CssUnusedSymbol*/
+.ball {
+    background-image: url("../assets/redBall.png");
+}
+
+/*noinspection CssUnusedSymbol*/
+.fastBall {
+    background-image: url("../assets/greenBall.png");
+}
+
+/*noinspection CssUnusedSymbol*/
+.followBall {
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    animation: spin 6s infinite alternate;
+    background: url("../assets/followBall.png") no-repeat;
+}
+
+/*noinspection CssUnusedSymbol*/
+.shot {
+    position: fixed;
+    height: 30px;
+    width: 30px;
+    background-image: url("../assets/shot.png");
+    z-index: 0;
+    background-size: cover;
+    animation: rotate 1s linear infinite ;
+
+}
+
+/*noinspection CssUnusedSymbol*/
+.infintyball {
+    position: fixed;
+    height: 80px;
+    width: 80px;
+    background-image: url("../assets/infinityBall.png");
+    z-index: 0;
+}
+
+/*noinspection CssUnusedSymbol*/
+.powerup {
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    background-image: url("../assets/powerup.png");
+    animation: rotate 1s infinite, rotateHueLittle 1s infinite alternate;
+}
+
+@keyframes rotate {
+    0%   {transform: rotate(0deg)}
+    100% {transform: rotate(360deg)}
+}
+
+@keyframes rotateHueLittle {
+    0% {filter: hue-rotate(0deg)}
+    20% {filter: hue-rotate(-10deg)}
+    40% {filter: hue-rotate(-20deg)}
+    60% {filter: hue-rotate(-30deg)}
+    80% {filter: hue-rotate(-40deg)}
+    100% {filter: hue-rotate(-50deg)}
+}
+
+@keyframes fly {
+    0%{
+        background-size: 100% 100%;
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 10px;
+        background-size: 60px 80px;
+    }
+}
+
+/*noinspection CssUnusedSymbol*/
+.fastBall {
+    animation: fly 1s infinite alternate;
+    background-repeat: no-repeat;
+}
+
+* {
+   -webkit-touch-callout: none; /* iOS Safari */
+   -webkit-user-select: none;   /* Chrome/Safari/Opera */
+   -moz-user-select: none;      /* Firefox */
+   -ms-user-select: none;       /* Internet Explorer/Edge*/
+   user-select: none;
+   -webkit-user-drag: none;
+}
+
+@keyframes spin {
+    0%  {
+        background-size: 100% 100%;
+        background-position-x: 0;
+        background-image: url("../assets/followBall.png");
+    }
+    45%  {
+        background-size: 100% 100%;
+        background-position-x: 0;
+        background-image: url("../assets/followBall.png");
+    }
+    50% {
+        background-size: 8px 100%;
+        background-position-x: 36px;
+    }
+    55%{
+        background-size: 100% 100%;
+        background-position-x: 0;
+        background-image: url("../assets/followBallInvert.png");
+    }
+    100%{
+        background-size: 100% 100%;
+        background-position-x: 0;
+        background-image: url("../assets/followBallInvert.png");
+    }
+}
+
+.pushBall{
+    border-radius: 50%;
+    box-shadow: 0 0 120px gray;
+    width: 100px;
+    height: 100px;
+    background-image: url("../assets/pushBall.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    animation: rotate linear infinite 8s;
+}

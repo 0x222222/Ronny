@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="particel"></div>
+    <div class="partidcel"></div>
+    <div class="partdicel"></div>
+
+</div>
+
+
+</body>
+</html>
+
+<style>
+    /*noinspection CssUnusedSymbol*/
+    #box:nth-child(3){
+     animation-delay: 0.4s;
+    }
+
+    /*noinspection CssUnusedSymbol*/
+    #box {
+        position: fixed;
+        animation: moveBox 2s linear infinite alternate;
+    }
+    @keyframes moveBox {
+        0%{left: 0}
+        100%{left: 100%}
+    }
+
+    /*noinspection CssUnusedSymbol*/
+    .particel {
+        width: 80px;
+        height: 80px;
+        background-size: 80px 80px;
+        background-repeat: no-repeat;
+        animation: particelRotate 1s infinite linear;
+    }
+
+    /*noinspection CssUnusedSymbol*/
+    .particel::before{
+        content: '';
+        width: 80px;
+        height: 80px;
+        background-size: 90px 90px;
+        position: absolute;
+        top: 80px;
+        animation: particelRotate 1.2s infinite linear reverse;
+        background-image: url("assets/powerup.png");
+    }
+
+    /*noinspection CssUnusedSymbol*/
+    .particel:nth-child(odd)::after{
+        filter: hue-rotate(300deg) saturate(400%);
+        content: '';
+        width: 70px;
+        height: 70px;
+        background-size: 70px 70px;
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        animation: particelRotate 1.2s infinite linear reverse;
+        background-image: url("assets/powerup.png");
+    }
+
+    @keyframes particelRotate {
+        0%{transform: rotate(0deg)}
+        100%{transform: rotate(360deg)}
+    }
+
+
+</style>

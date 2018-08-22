@@ -1,0 +1,12 @@
+#endscreen {
+    display: none;
+    width: 2800px;
+    height: 1400px;
+    top: 200px;
+    left: 200px;
+    position: fixed;
+    background-color: red;
+    z-index: 1000000;
+    box-shadow: black 20px 20px 40px;
+    border: solid 10px #222;
+}

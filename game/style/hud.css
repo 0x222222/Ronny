@@ -1,0 +1,128 @@
+#gameboxOverlayer, #gameboxOverlayerStun {
+    width: 3200px;
+    height: 1515px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+    background-color: transparent;
+    animation: rotateHueLittle 1s infinite alternate;
+}
+
+
+#hud {
+    position: fixed;
+    width: 3200px;
+    height: 1800px;
+    z-index: 0;
+    background-image: url("../assets/background_2.png");
+    background-repeat: no-repeat;
+}
+
+#healthtable {
+    width: 2800px;
+    border-collapse: collapse;
+    position: fixed;
+    top: 1730px;
+    z-index: +10;
+    left: 0;
+}
+
+#healthtableOverlayer {
+    width: 2800px;
+    border-collapse: collapse;
+    position: fixed;
+    top: 1730px;
+    z-index: 12;
+    left: 0;
+}
+
+#glow{
+    width: 300px;
+    top: 1730px;
+    z-index: 11;
+    height: 70px;
+    position: fixed;
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(255,255,255,0.4) 30%, rgba(255,255,255,0.4) 70%, rgba(0,0,0,0) 100%);
+    left: 0;
+}
+
+#healthtableOverlayer td {
+    border: 10px #222 solid;
+    font-size: 4em;
+    width: 10%;
+    height: 50px
+}
+
+#healthtable td {
+    border: 10px #222 solid;
+    font-size: 4em;
+    width: 10%;
+    height: 50px;
+    box-shadow: inset 2px 2px 2px black;
+}
+
+#healthtable td:nth-child(even) {
+}
+
+.debug,.debugExtend{
+    font-size: 2em;
+    color: white;
+    visibility: visible;
+}
+
+#score {
+    font-family: "Arial";
+    color: #111111;
+    text-shadow: 3px 3px 3px black ;
+    font-size: 6em;
+    z-index: +5000;
+}
+
+#debug {
+}
+
+#debugExtend {
+    float: right;
+    width: 300px;
+    overflow: hidden;
+}
+
+#effectBox {
+    position: fixed;
+    top: 1527px;
+    height: 275px;
+    width: 390px;
+    background-color: rgba(255,255,255,0.8);
+    left: 2800px;
+    border-left: solid #222222 20px;
+    overflow: hidden;
+}
+
+#effectBox p {
+    margin: 0 0 0 50px;
+    font-size: 40px;
+    font-family: Arial;
+    color: #111111;
+    text-shadow: 2px 2px 2px black ;
+}
+#effectBox .powerup1::before {
+    content: url("../assets/powerup-small.png");
+    position: absolute;
+    left: 10px;
+    margin-top: 3px;
+}
+#effectBox .powerup2::before {
+    content: url("../assets/powerup-shot-small.png");
+    position: absolute;
+    font-style: italic;
+    left: 10px;
+    margin-top: 3px;
+}
+#effectBox .powerup3::before {
+    content: url("../assets/powerup-ultra-small.png");
+    position: absolute;
+    font-weight: bolder;
+    left: 10px;
+    margin-top: 3px;
+}
