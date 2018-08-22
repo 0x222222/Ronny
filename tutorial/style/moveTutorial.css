@@ -1,0 +1,41 @@
+body {
+    position:relative;
+    width: 3200px;
+    height:1800px;
+    overflow: hidden;
+    margin:1em auto;
+    background-image: url("../../game/assets/background.png");
+    background-size: 3200px;
+    background-repeat: no-repeat;
+    z-index:0;
+}
+
+
+#
+
+#player {
+    background-image: url("../../game/assets/blueBall.png");
+    width: 60px;
+    height: 60px;
+    left: 70px;
+    top:800px;
+    position: fixed;
+    z-index: 50;
+    border-radius: 50%;
+    box-shadow: 0 0 30px yellow;
+    animation: rotate 4s infinite alternate, parcourWeg 4s infinite 1s;
+}
+
+@keyframes rotate {
+    0%   {transform: rotate(0deg)}
+    100% {transform: rotate(360deg)}
+}
+
+@keyframes parcourWeg {
+    0% {left:70px; top:800px;}
+    15% {left:70px; top:300px;}
+    30% {left:550px ; top:300px;}
+    45% {left:550px ; top:800px;}
+    60% {left:850px; top:800px;}
+    100% {left:850px; top:800px;}
+}
