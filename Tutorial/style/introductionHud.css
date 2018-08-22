@@ -1,0 +1,74 @@
+img{
+    width: 100%;
+    height: auto;
+    position:absolute;}
+
+#mainFrame {
+    position:relative;
+    width: 3200px;
+    height:1520px;
+    overflow: hidden;
+    margin:1em auto;
+}
+
+.startButton{
+    margin:1em auto;
+    width:3200px;
+    height:1520px;
+    z-index:210;
+}
+
+@keyframes loop1 {from{left:-100%} to {left:0}}
+@keyframes loop2 {from{left:0} to {left:100%}}
+
+.backgroundloop:nth-child(1){
+    animation:loop1 15s infinite reverse linear;
+    z-index: 100;
+}
+.backgroundloop:nth-child(2){
+    animation:loop2 15s infinite reverse linear;
+    z-index: 100;
+}
+
+#gameLogo {
+    left: 1550px;
+    top: 200px;
+    Width: 256px;
+    height: 256px;
+    z-index: 200;
+    border-radius: 50%;
+    animation: logoShadow 4s infinite reverse linear;
+}
+
+@keyframes logoShadow {
+    0% {box-shadow: 0 0 60px 50px #ffffff,
+                      0 0 100px 70px #ff00ff,
+                      0 0 140px 100px #00ffff;
+    }
+    50% {box-shadow: 0 0 60px 50px #fff0d7,
+                    0 0 100px 70px #ff00c5,
+                    0 0 140px 100px #00ffb3;
+    }
+    100% {box-shadow: 0 0 60px 50px #ffffff,
+                      0 0 100px 70px #ff00ff,
+                      0 0 140px 100px #00ffff;
+    }
+}
+
+
+#spielName {
+    font-size: 80px;
+    color:white;
+    position:absolute;
+    left: calc(50% - 100px);
+    cursor: default;
+    z-index: 300;
+}
+
+.ballVideo{
+    left:1635px;
+    top:800px;
+    width:60px;
+    height: 60px;
+    z-index: 200;
+}

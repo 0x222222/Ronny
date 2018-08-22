@@ -1,0 +1,48 @@
+﻿#tutorialboxOverlayer {
+    width: 3200px;
+    height: 1520px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+    background-color:transparent;
+}
+
+
+.keyboard {
+    margin-left: calc(50% - 150px);
+    margin-top: 1125px;
+    /* sehr unschöne Lösung um das Bild wegzubekommen*/
+    width: 50000px;
+    overflow: hidden;
+    animation-name: keyboardWASD;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function:step-end;
+    background-repeat: no-repeat;
+}
+
+
+.grünerBall{
+    width:60px;
+    height:60px;
+    animation: ballalleHimmelsrichtungen 8s infinite;
+    background-repeat:no-repeat;
+    z-index:200;
+}
+
+@keyframes keyboardWASD{
+    0% { background-image:url("../assets/_BalkenWAS_D_.png");}
+    25% {background-image:url("../assets/_Balken_W_ASD.png");}
+    50% {background-image:url("../assets/_BalkenW_A_SD.png");}
+    75% {background-image:url("../assets/_BalkenWA_S_D.png");}
+    100% {background-image:url("../assets/_BalkenWAS_D_.png");}
+}
+
+@keyframes ballalleHimmelsrichtungen{
+    0% {margin-left:calc(50% - 150px); margin-top:800px;}
+    25% {margin-left:calc(50% + 150px); margin-top:800px;}
+    50% {margin-left:calc(50% + 150px); margin-top:500px;}
+    75% {margin-left:calc(50% - 150px); margin-top:500px;}
+    100% {margin-left:calc(50% - 150px); margin-top:800px;}
+}

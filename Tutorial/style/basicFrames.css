@@ -1,0 +1,26 @@
+img{
+    width: 100%;
+    height: auto;
+    position:absolute;}
+
+p[title] {
+    font-size: 100px;
+    color:white;
+    position:absolute;
+    left: calc(50% - 200px);
+    cursor: default;
+    z-index: 300;
+    font-family: Verdana;
+}
+
+div:nth-child(1){
+    position:relative;
+    width: 3200px;
+    height:1520px;
+    overflow: hidden;
+    margin:1em auto;
+    background-image: url("../../game/assets/background.png");
+    background-size: 3200px;
+    background-repeat: no-repeat;
+    z-index:0;
+}
