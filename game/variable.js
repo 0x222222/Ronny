@@ -8,7 +8,7 @@
 
 //Options
 _spawn                      = false;
-_ticksForRound              = 1000;
+_ticksForRound              = 900;
 _gameSpeed                  = 25; //start
 _score                      = 0;
 _minGamespeed               = 5;
