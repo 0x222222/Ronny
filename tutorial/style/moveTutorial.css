@@ -23,7 +23,7 @@ body {
     z-index: 50;
     border-radius: 50%;
     box-shadow: 0 0 30px yellow;
-    animation: rotate 4s infinite alternate, parcourWeg 4s infinite 1s;
+    animation: rotate 4s infinite alternate, parcourPath 6s infinite 1s;
 }
 
 @keyframes rotate {
@@ -31,7 +31,7 @@ body {
     100% {transform: rotate(360deg)}
 }
 
-@keyframes parcourWeg {
+@keyframes parcourPath {
     0% {left:70px; top:800px;}
     15% {left:70px; top:300px;}
     30% {left:550px ; top:300px;}
@@ -39,3 +39,24 @@ body {
     60% {left:850px; top:800px;}
     100% {left:850px; top:800px;}
 }
+
+
+#barMovement{
+    position:fixed;
+    overflow:hidden;
+    left:0;
+    top:0;
+    width: 3200px;
+    height: 1800px;
+    background-image:url("../assets/ausweichBalken.png");
+    animation:test 6s infinite linear 1s;
+}
+
+@keyframes test {
+     0%   {
+         background-position-x: 3200px;
+     }
+     100% {
+         background-position-x: -3200px;
+     }
+ }
