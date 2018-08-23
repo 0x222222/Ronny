@@ -11,19 +11,17 @@ body {
 }
 
 
-
-
 #player {
     background-image: url("../../game/assets/blueBall.png");
     width: 60px;
     height: 60px;
-    left: 70px;
-    top:800px;
+    left: 40px;
+    top:300px;
     position: fixed;
     z-index: 50;
     border-radius: 50%;
     box-shadow: 0 0 30px yellow;
-    animation: rotate 4s infinite alternate, parcourPath 6s infinite 1s;
+    animation: rotate 4s infinite alternate, parcourPath 10s infinite 1s;
 }
 
 @keyframes rotate {
@@ -32,12 +30,13 @@ body {
 }
 
 @keyframes parcourPath {
-    0% {left:70px; top:800px;}
-    15% {left:70px; top:300px;}
-    30% {left:550px ; top:300px;}
-    45% {left:550px ; top:800px;}
-    60% {left:850px; top:800px;}
-    100% {left:850px; top:800px;}
+    0% {left:40px; top:300px;}
+    25% {left:1250px; top:300px;}
+    40% {left:1250px ; top:1400px;}
+    55% {left:1350px ; top:1200px;}
+    65% {left:1150px; top:300px;}
+    80% {left:1850px; top:300px;}
+    100% {left:40px; top:300px;}
 }
 
 
@@ -45,11 +44,14 @@ body {
     position:fixed;
     overflow:hidden;
     left:0;
-    top:0;
+    top:-100px;
     width: 3200px;
     height: 1800px;
     background-image:url("../assets/ausweichBalken.png");
-    animation:test 6s infinite linear 1s;
+    background-repeat: no-repeat;
+    transform:scaleX(1.2);
+    transform:scaleY(0.9);
+    animation:test 10s infinite linear 1s;
 }
 
 @keyframes test {
@@ -57,6 +59,17 @@ body {
          background-position-x: 3200px;
      }
      100% {
-         background-position-x: -3200px;
+         background-position-x: -4600px;
      }
  }
+
+p[title] {
+    font-size: 100px;
+    color:white;
+    position:absolute;
+    left:-250px;
+    top:-100px;
+    cursor: default;
+    z-index: 300;
+    font-family: Verdana, sans-serif, Arial;
+}
