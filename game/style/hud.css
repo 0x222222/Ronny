@@ -92,37 +92,48 @@
     position: fixed;
     top: 1527px;
     height: 275px;
-    width: 390px;
+    width: 400px;
     background-color: rgba(255,255,255,0.8);
-    left: 2800px;
-    border-left: solid #222222 20px;
+    left: 2790px;
+    border-left: solid #222222 10px;
     overflow: hidden;
 }
 
-#effectBox p {
+#effectBox p, #effectLast p {
     margin: 0 0 0 50px;
     font-size: 40px;
     font-family: Arial;
     color: #111111;
     text-shadow: 2px 2px 2px black ;
 }
-#effectBox .powerup1::before {
+#effectBox .powerup1::before, #effectLast  .powerup1::before {
     content: url("../assets/powerup-small.png");
     position: absolute;
     left: 10px;
     margin-top: 3px;
 }
-#effectBox .powerup2::before {
+#effectBox .powerup2::before, #effectLast  .powerup2::before {
     content: url("../assets/powerup-shot-small.png");
     position: absolute;
     font-style: italic;
     left: 10px;
     margin-top: 3px;
 }
-#effectBox .powerup3::before {
+#effectBox .powerup3::before, #effectLast  .powerup3::before{
     content: url("../assets/powerup-ultra-small.png");
     position: absolute;
     font-weight: bolder;
     left: 10px;
     margin-top: 3px;
+}
+
+#effectLast {
+    position: fixed;
+    top: 1527px;
+    height: 215px;
+    width: 410px;
+    background-color: rgba(255,255,255,0.8);
+    left: 2370px;
+    border-left: solid #222222 10px;
+    overflow: hidden;
 }

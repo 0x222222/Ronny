@@ -46,7 +46,7 @@ function round() {
 
     //TEMP
 
-    if(_round%30===0&&_round!==0){
+    if(_round%42===0&&_round!==0){
         _maxGamespeed--
     }
 

@@ -1,6 +1,7 @@
 //powerup
 
 var powerups = [];
+var powerupsAktiv = [];
 
 function spawnPowerup() {
     n = powerups.length;
@@ -95,12 +96,15 @@ function getEffectOfPowerup(number) {
         switch (ran(0,3)){
             case 0:
                 addHealth(1000);
+                addActiveEffect("powerup3", "Health Boost");
                 break;
             case 1:
                 _playerSpeed+=2;
+                addActiveEffect("powerup3", "Faster Player");
                 break;
             case 2:
                 _maxGamespeed+=2;
+                addActiveEffect("powerup3", "Slower Gamer");
                 break;
             case 3:
                 _damage-=35;
@@ -114,9 +118,11 @@ function getEffectOfPowerup(number) {
         switch (ran(0,5)){
             case 0:
                 stun(75);
+                addActiveEffect("powerup2", "Stun");
                 break;
             case 1:
                 damagePercentage(200);
+                addActiveEffect("powerup2", "Damage");
                 break;
             case 3:
                 addEffect("slow",15,"Slow Player","powerup2");
@@ -124,6 +130,7 @@ function getEffectOfPowerup(number) {
                 break;
             case 4:
                 _maxShots-=2;
+                addActiveEffect("powerup2", "Reduve Shots");
                 break;
             case 5:
                 switch (ran(0,8)){
@@ -156,6 +163,7 @@ function getEffectOfPowerup(number) {
                         _bounceVertical-=50;
                         break;
                 }
+                addActiveEffect("powerup2", "Bounce");
                 break;
             case 6:
         }
@@ -172,6 +180,7 @@ function getEffectOfPowerup(number) {
                 addHealth(amountOfHeal);
 
             }
+            addActiveEffect("powerup1", "Health Boost");
             break;
         case 4:
             addEffect("speedup",25,"Faster player","powerup1");
@@ -182,6 +191,7 @@ function getEffectOfPowerup(number) {
             _gameSpeed+=10;
             break;
         case 6:
+            addActiveEffect("powerup1", "More Shots");
             _maxShots++;
             break;
     }
@@ -196,4 +206,21 @@ function displayPowerups() {
     }
 
     document.getElementById("effectBox").innerHTML = text;
+}
+
+function addActiveEffect(type, name) {
+    powerupsAktiv.push(
+        [
+            type, name
+        ]
+    );
+    if(powerupsAktiv.length>4){
+        powerupsAktiv.shift();
+    }
+    let text="";
+    for (o=0;o<powerupsAktiv.length;o++){
+        text="<p class='"+powerupsAktiv[o][0]+"'>"+powerupsAktiv[o][1]+"<p/>"+text;
+        log(text)
+    }
+    document.getElementById("effectLast").innerHTML = text;
 }

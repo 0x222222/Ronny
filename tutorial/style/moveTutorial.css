@@ -167,3 +167,7 @@ p[title] {
     <!-- Leere Url ist absicht -->
     80% {background-image: url("../assets/AKey.png");}
 }
+
+.keyW, .keyA, .keyS, .keyD{
+    border-radius: 15px;
+}

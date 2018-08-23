@@ -330,7 +330,7 @@ function moveInfinityBall() {
         }
         if(movLeft>3200){
             document.getElementById(("infinityBalls"+i)).style.left = (1-movWidth)+"px";
-            infinityBallss[i][0]=  Math.random().toFixed(3)/1.12+0.1;
+            infinityBalls[i][0]=  Math.random().toFixed(3)/1.12+0.1;
         }
         if(movLeft+movWidth<0){
             document.getElementById(("infinityBalls"+i)).style.left = (3201)+"px";

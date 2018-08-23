@@ -42,8 +42,8 @@
         </tr>
     </table>
 
-    <div id="effectBox">
-    </div>
+    <div id="effectBox"></div>
+    <div id="effectLast"></div>
 </div>
 
 <div id="gameboxOverlayer"></div>
@@ -113,10 +113,6 @@
 
     //sleep function
 
-    function wait(resolve, reject)
-    {
-        setTimeout(resolve,ms)
-    }
 
     function sleep(ms) {
         return new Promise(
