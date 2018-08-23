@@ -34,9 +34,89 @@ body {
     25% {left:1250px; top:300px;}
     40% {left:1250px ; top:1400px;}
     55% {left:1350px ; top:1200px;}
-    65% {left:1150px; top:300px;}
-    80% {left:1850px; top:300px;}
+    75% {left:450px; top:300px;}
+    85% {left:1850px; top:300px;}
     100% {left:40px; top:300px;}
+}
+
+
+.keyW {
+    left: 2700px;
+    top: 260px;
+    position: fixed;
+    height: 153px;
+    width: 153px;
+    box-shadow: inset black 0 0 300px;
+    background: url("../assets/WKey.png") no-repeat;
+    animation: keyboardW 10s infinite step-end 1s;
+    z-index: 300;
+}
+
+.keyA {
+    left:2500px;
+    top: 450px;
+    position: fixed;
+    height: 153px;
+    width: 153px;
+    box-shadow: inset black 0 0 300px;
+    background: url("../assets/AKey.png") no-repeat;
+    animation: keyboardA 10s infinite step-end 1s;
+    z-index: 300;
+}
+
+.keyS {
+    left:2700px;
+    top:450px;
+    position: fixed;
+    height: 153px;
+    width: 153px;
+    box-shadow: inset black 0 0 300px;
+    background: url("../assets/SKey.png") no-repeat;
+    animation: keyboardS 10s infinite step-end 1s;
+    z-index: 300;
+}
+
+.keyD {
+    left:2900px;
+    top:450px;
+    position: fixed;
+    height: 153px;
+    width: 153px;
+    box-shadow: inset black 0 0 300px;
+    background: url("../assets/DKey.png") no-repeat;
+    animation: keyboardD 10s infinite step-end 1s;
+    z-index: 300;
+}
+
+@keyframes keyboardW {
+    25% {box-shadow: inset black 0 0 300px}
+    40% {box-shadow: inset black 0 0 0}
+    55% {box-shadow: inset black 0 0 0}
+    75% {box-shadow: inset black 0 0 300px}
+}
+
+@keyframes keyboardA {
+
+    40% {box-shadow: inset black 0 0 300px}
+    55% {box-shadow: inset black 0 0 0}
+    75% {box-shadow: inset black 0 0 300px}
+}
+
+@keyframes keyboardS {
+    0% {box-shadow: inset black 0 0 300px}
+    25% {box-shadow: inset black 0 0 0}
+    40% {box-shadow: inset black 0 0 300px}
+}
+
+
+@keyframes keyboardD {
+    0% {box-shadow: inset black 0 0 0}
+    25% {box-shadow: inset black 0 0 300px}
+    40% {box-shadow: inset black 0 0 0}
+    55% {box-shadow: inset black 0 0 300px}
+    75% {box-shadow: inset black 0 0 0}
+    85% {box-shadow: inset black 0 0 300px}
+    100% {box-shadow: inset black 0 0 300px}
 }
 
 
@@ -47,10 +127,8 @@ body {
     top:-100px;
     width: 3200px;
     height: 1800px;
-    background-image:url("../assets/ausweichBalken.png");
-    background-repeat: no-repeat;
-    transform:scaleX(1.2);
-    transform:scaleY(0.9);
+    background: url("../assets/ausweichBalken.png") no-repeat;
+    transform:scale(1.2, 0.9);
     animation:test 10s infinite linear 1s;
 }
 
@@ -66,10 +144,26 @@ body {
 p[title] {
     font-size: 100px;
     color:white;
-    position:absolute;
-    left:-250px;
+    position:fixed;
+    left:1250px;
     top:-100px;
     cursor: default;
     z-index: 300;
     font-family: Verdana, sans-serif, Arial;
+}
+
+#powerup {
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    left:1850px;
+    top:300px;
+    animation: rotate 4s infinite alternate, powerupCollect 10s infinite step-end 1s;
+    z-index: 50;
+}
+
+@keyframes powerupCollect {
+    0%{background-image: url("../../game/assets/powerup-ultra.png");}
+    <!-- Leere Url ist absicht -->
+    80% {background-image: url("../assets/AKey.png");}
 }
