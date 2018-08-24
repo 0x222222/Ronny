@@ -1,0 +1,82 @@
+body{
+    margin: 0;
+    overflow: hidden;
+}
+
+#menubox{
+    background-color: red;
+    width: 3200px;
+    height: 1800px;
+}
+
+.menupart {
+    width: 1600px;
+    height: 900px;
+    position: fixed;
+    border: 20px solid #222222;
+    box-shadow: inset black 0 0 1200px;
+    transition-duration: 0.3s;
+    background-image: url("../assets/background-flip.png");
+    animation: test 10s infinite alternate;
+    background-size: 1600px 900px;
+    overflow: hidden;
+}
+
+#moveTutorialIFrame{
+    width: 3200px;
+    height: 1800px;
+    position: fixed;
+}
+
+.menupart:hover {
+    box-shadow: inset black 0 0 30px;
+    transition-duration: 0.3s;
+}
+
+.menupart:nth-child(1){
+    left: 0;
+    top: 0;
+}
+.menupart:nth-child(2){
+    top: 0;
+    left: 1600px;
+    filter: hue-rotate(90deg);
+}
+.menupart:nth-child(3){
+    top: 900px;
+    left: 0;
+    filter: hue-rotate(180deg);
+}
+.menupart:nth-child(4){
+    top: 900px;
+    left: 1600px;
+    filter: hue-rotate(270deg);
+}
+
+.menupart:nth-child(5){
+    top:300px;
+    left:1025px;
+    position: absolute;
+    width: 1100px;
+    height: 1100px;
+    border: 50px solid #222222;
+    border-radius: 1100px;
+}
+
+@keyframes test {
+    0%   {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -1600px;
+    }
+}
+
+* {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge*/
+    user-select: none;
+    -webkit-user-drag: none;
+}

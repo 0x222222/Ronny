@@ -1,0 +1,39 @@
+body {
+    position:fixed;
+    width: 3200px;
+    height:1800px;
+    overflow: hidden;
+    margin:1em auto;
+    background-image: url("../../game/assets/background.png");
+    background-size: 3200px;
+    background-repeat: no-repeat;
+    z-index:0;
+}
+
+p[title] {
+    font-size: 100px;
+    color:white;
+    position:fixed;
+    left:1300px;
+    top:-100px;
+    cursor: default;
+    z-index: 300;
+    font-family: Verdana, sans-serif, Arial;
+}
+
+#healthtableOverlayer {
+     width: 3200px;
+     border-collapse: collapse;
+     position: fixed;
+     top: 1530px;
+     z-index: 12;
+     margin-left:0;
+}
+
+#healthtableOverlayer td {
+    border: 10px #222 solid;
+    font-size: 4em;
+    width: 10%;
+    height: 50px
+}
+
