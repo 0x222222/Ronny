@@ -7,7 +7,32 @@ body{
     background-color: red;
     width: 3200px;
     height: 1800px;
+    z-index: 1;
 }
+
+#movementTitle {
+    position:fixed;
+    width: 100px;
+    height: 100px;
+    left: 600px;
+    top: 250px;
+    font-size: 100px;
+    color: white;
+    font-family: Verdana;
+    transition: top 2s, left 2s, font-size 2s;
+}
+
+#movementpart:hover #movementTitle{
+    left: 700px;
+    top: 10px;
+    font-size: 50px;
+}
+
+#movementpart:hover #moveTutorialIFrame {
+    opacity: 1;
+    transition-delay: 2s;
+}
+
 
 .menupart {
     width: 1600px;
@@ -26,11 +51,15 @@ body{
     width: 3200px;
     height: 1800px;
     position: fixed;
+    opacity: 0;
+    transition: opacity 2s;
+    transition-delay: 0s;
 }
 
 .menupart:hover {
     box-shadow: inset black 0 0 30px;
     transition-duration: 0.3s;
+
 }
 
 .menupart:nth-child(1){
@@ -55,7 +84,7 @@ body{
 
 .menupart:nth-child(5){
     top:300px;
-    left:1025px;
+    left:1000px;
     position: absolute;
     width: 1100px;
     height: 1100px;

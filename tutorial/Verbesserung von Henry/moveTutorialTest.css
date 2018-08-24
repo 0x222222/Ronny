@@ -1,16 +1,3 @@
-body {
-    position:relative;
-    width: 3200px;
-    height:1800px;
-    overflow: hidden;
-    margin:1em auto;
-    background-image: url("../../game/assets/background.png");
-    background-size: 3200px;
-    background-repeat: no-repeat;
-    z-index:-10;
-}
-
-
 #player {
     background-image: url("../../game/assets/blueBall.png");
     width: 60px;
@@ -129,17 +116,6 @@ body {
          background-position-x: -4600px;
      }
  }
-
-p[title] {
-    font-size: 100px;
-    color:white;
-    position:fixed;
-    left:1250px;
-    top:-100px;
-    cursor: default;
-    z-index: 300;
-    font-family: Verdana, sans-serif, Arial;
-}
 
 #powerup {
     width: 80px;
