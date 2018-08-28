@@ -6,7 +6,8 @@
 </head>
 <body>
     <div id="test">
-
+        <div id="test2"></div>
+        <div id="test3"></div>
     </div>
 </body>
 </html>
@@ -16,19 +17,40 @@
         margin: 0;
         overflow: hidden;
     }
+
     #test {
-        background-image: url("assets/background-flip.png");
-        animation: test 3s infinite;
-        width: 1600px;
-        height: 900px;
-        background-size: 1600px 900px;
+        width: 1900px;
+        height: 800px;
+        background-image: url("assets/background.png");
     }
-    @keyframes test {
-        0%   {
-            background-position-x: 0;
-        }
-        100% {
-            background-position-x: -1600px;
-        }
+
+    #test2 {
+        background-image: url(assets/windx.png);
+        width: 1900px;
+        height: 800px;
+        position: fixed;
+        content: '';
+        animation: moveWindX 10s infinite linear;
+        display: none;
     }
+
+    #test3 {
+        background-image: url(assets/windy.png);
+        width: 1900px;
+        height: 800px;
+        position: fixed;
+        content: '';
+        animation: moveWindY 10s infinite linear;
+    }
+
+    @keyframes moveWindX {
+        0%  {background-position-x: 0}
+        100%{background-position-x: 100%}
+    }
+
+    @keyframes moveWindY {
+        0%  {background-position-y: 0}
+        100%{background-position-y: 100%}
+    }
+
 </style>

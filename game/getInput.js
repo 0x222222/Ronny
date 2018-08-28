@@ -7,7 +7,9 @@ document.onmousemove = function(e) {
 };
 
 document.onclick = function (e) {
-    _mouseclick = true
+    if(e.button===2){
+        _mouseclickRight = true
+    }
 };
 
 
@@ -25,12 +27,27 @@ var keyStatus = {
     c: false,
     v: false,
 
+
+
     space: false,
 
     ArrowUp:    false,
     ArrowDown:  false,
     ArrowLeft:  false,
-    ArrowRight: false
+    ArrowRight: false,
+
+    F1: false,
+    F2: false,
+    F3: false,
+    F4: false,
+    F5: false,
+    F6: false,
+    F7: false,
+    F8: false,
+    F9: false,
+    F10: false,
+    F11: false,
+    F12: false,
 };
 
 document.addEventListener('keydown', function(event) {
@@ -52,7 +69,16 @@ function handle(e) {
 
         if(e.key==="ArrowRight"){keyStatus.d = true}
 
-
+        if(e.key==="Escape"){
+            toggleMenu()
+        }
+        if((e.key ==="r"&&!_live)||(e.key ==="r"&&_live&&endscreen.style.display !== "none"&&_live&&endscreen.style.display !== "")){
+            window.open("game.html","_self")
+        }
+        if(keyStatus.F8&&keyStatus.F9){
+            $( "#debug" ).slideToggle( "fast");
+            $( "#debugExtend" ).slideToggle( "fast");
+        }
     }
     if(e.type === "keyup") {
         keyStatus[e.key] = false;

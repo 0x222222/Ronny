@@ -22,7 +22,6 @@ function round() {
 
     removeEffectArray();
 
-
     if(_lastReg+_hpReg<_round&&_round!==0){
         healStandard();
         _lastReg=_round;
@@ -75,7 +74,7 @@ function round() {
             createFollowBall();
         }
         //180 and 250
-        if(_round===0||_round===250){
+        if(_round===180||_round===250){
             createPushBall()
         }
 

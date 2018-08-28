@@ -86,6 +86,12 @@ function removeEffect(name) {
     if(name==="reduceDamage"){
         _damage+=35;
     }
+    if(name==="toFast"){
+        _playerSpeed-=10;
+    }
+    if(name==="wind"){
+        _windY = _windX = 0;
+    }
 
 }
 
@@ -93,7 +99,7 @@ function getEffectOfPowerup(number) {
 
     //powerup level 3
     if(powerups[number][0]>95){
-        switch (ran(0,3)){
+        switch (ran(0,4)){
             case 0:
                 addHealth(1000);
                 addActiveEffect("powerup3", "Health Boost");
@@ -115,7 +121,7 @@ function getEffectOfPowerup(number) {
     }
     //powerup level 2
     if(powerups[number][0]<=20){
-        switch (ran(0,5)){
+        switch (ran(0,8)){
             case 0:
                 stun(75);
                 addActiveEffect("powerup2", "Stun");
@@ -166,6 +172,27 @@ function getEffectOfPowerup(number) {
                 addActiveEffect("powerup2", "Bounce");
                 break;
             case 6:
+                switch (ran(0,4)){
+                    case 0:
+                        _windX=10;
+                        break;
+                    case 1:
+                        _windX=-10;
+                        break;
+                    case 2:
+                        _windY=10;
+                        break;
+                    case 3:
+                        _windY=-10;
+                        break;
+                }
+                addEffect("wind", 15,"Wind", "powerup2");
+                break;
+            case 7:
+                addEffect("toFast",10,"To fast","powerup2");
+                _playerSpeed+=10;
+                break;
+                break;
         }
         return;
     }
@@ -184,7 +211,7 @@ function getEffectOfPowerup(number) {
             break;
         case 4:
             addEffect("speedup",25,"Faster player","powerup1");
-            _playerSpeed+=5;
+            _playerSpeed+=3;
             break;
         case 5:
             addEffect("slowGameSpeed",10,"Slower Game","powerup1");

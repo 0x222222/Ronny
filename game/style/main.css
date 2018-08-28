@@ -6,7 +6,7 @@ body {
 }
 
 /*noinspection CssUnusedSymbol,CssUnusedSymbol*/
-#player, .ball, .infintyball {
+.ball, .infintyball {
     animation-duration: 4s;
     animation-name: rotate;
     animation-iteration-count: infinite;
@@ -38,9 +38,12 @@ body {
     position: fixed;
     top: 730px;
     left: 1570px;
-    z-index: 50;
     border-radius: 50%;
-    box-shadow: 0 0 30px yellow;
+    box-shadow: 0 0 40px yellow;
+    animation-duration: 1s;
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 /*noinspection CssUnusedSymbol,CssUnusedSymbol*/

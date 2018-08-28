@@ -1,0 +1,52 @@
+#wind1, #wind2, #wind3, #wind4 {
+    width: 3200px;
+    height: 1520px;
+    position: fixed;
+    content: '';
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#wind1{
+    background-image: url(../assets/windx.png);
+    animation: moveWindX 10s infinite linear;
+    display: none;
+}
+
+#wind2{
+    background-image: url(../assets/windx.png);
+    animation: moveWindX- 10s infinite linear;
+}
+
+
+#wind3{
+    background-image: url(../assets/windy.png);
+    animation: moveWindY 10s infinite linear;
+}
+
+#wind4{
+    background-image: url(../assets/windy.png);
+    animation: moveWindY- 10s infinite linear;
+}
+
+
+@keyframes moveWindX {
+     0%  {background-position-x: 0}
+     100%{background-position-x: 100%}
+ }
+
+@keyframes moveWindY {
+    0%  {background-position-y: 0}
+    100%{background-position-y: 100%}
+}
+
+@keyframes moveWindX- {
+    0%  {background-position-x: 0}
+    100%{background-position-x: -100%}
+}
+
+@keyframes moveWindY- {
+    0%  {background-position-y: 0}
+    100%{background-position-y: -100%}
+}

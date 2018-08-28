@@ -30,7 +30,7 @@ async function hover(id){
         if(fontSize <= 30)
             clearInterval();
         else{
-            fontSize -=
+            fontSize --
         }
 
     }

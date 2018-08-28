@@ -2,20 +2,20 @@
 
 //noinspection JSSuspiciousNameCombination
 function cornerX(obj) {
-    return document.getElementById(obj).offsetTop;
+    return  parseInt(document.getElementById(obj).offsetTop);
 }
 //noinspection JSSuspiciousNameCombination
 function cornerY(obj) {
-    return document.getElementById(obj).offsetLeft;
+    return  parseInt(document.getElementById(obj).offsetLeft);
 }
 
 
 function PT() {
-    return document.getElementById("player").offsetTop+document.getElementById("player").offsetHeight/2;
+    return  parseInt(document.getElementById("player").offsetTop+document.getElementById("player").offsetHeight/2);
 }
 
-function PL() {
-    return document.getElementById("player").offsetLeft+document.getElementById("player").offsetWidth/2;
+function  PL() {
+    return parseInt(document.getElementById("player").offsetLeft+document.getElementById("player").offsetWidth/2);
 }
 
 function posT(obj) {
@@ -100,4 +100,43 @@ function log(text) {
 function stun(value) {
     document.getElementById("gameboxOverlayerStun").style.boxShadow ="inset 0px 0px 1500px purple";
     _playerStun = value;
+}
+
+function toggleMenu() {
+    if(endscreen.style.display !== "none"&&endscreen.style.display !== ""){
+        $("#endscreen").slideUp("fast");
+        $("#endscreenBackground").fadeOut("fast");
+        _menue=false;
+    } else {
+        $("#endscreen").slideDown("fast", function () {
+            document.getElementById("gameboxOverlayer").style.boxShadow ="";
+            document.getElementById("gameboxOverlayerStun").style.boxShadow ="";
+        });
+        $("#endscreenBackground").fadeIn("fast");
+        _menue=true;
+        document.getElementById("scoreMenue").innerHTML = _score.toFixed(0);
+    }
+}
+
+function toggleSlide(id) {
+    if(endscreen.style.display !== "none"){
+        $("#"+id).slideUp("fast");
+    } else {
+        $("#endscreen"+id).slideDown("fast");
+    }
+}
+
+function toggleFade(id) {
+    if (endscreen.style.display !== "none") {
+        $("#" + id).fadeOut("fast");
+    } else {
+        $("#endscreen" + id).fadeOut("fast");
+    }
+}
+
+function death() {
+    if(!_godmode){
+        _live = false;
+        toggleMenu();
+    }
 }

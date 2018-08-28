@@ -41,7 +41,7 @@ function movePlayer() {
     }
 
 
-    move(movePlayerHor+_bounceHorizontal, movePlayerVer+_bounceVertical, "player");
+    move(movePlayerHor+_bounceHorizontal+_windX, movePlayerVer+_bounceVertical+_windY, "player");
 
 
 

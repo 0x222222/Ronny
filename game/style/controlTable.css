@@ -1,0 +1,17 @@
+#controlTable td {
+    border: 10px solid #222222;
+    font-size: 4em;
+    font-family: Arial;
+    margin-right: 8px;
+    text-shadow: black 2px 2px 2px;
+}
+
+#controlTable {
+    border-collapse: collapse;
+}
+
+.controlTableIMG {
+    height: 100px;
+    margin: 8px 8px 0px 8px;
+    filter: drop-shadow(5px 5px 5px black);
+}

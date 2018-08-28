@@ -29,8 +29,8 @@ _speedTimeIncreaseStand     = 1;
 _rushModeEnergyCost         = 0.1;
 _rushModeBoost              = 3;
 _teleportDistance           = 40;//standart speed * value
-_teleportEnergyCost         = 20;
-_teleportCooldown           = 2;
+_teleportEnergyCost         = 10;
+_teleportCooldown           = 1;
 _shootSpeed                 = 10; //Jump 3 time at once
 _maxShots                   = 6;
 _infinityBallSpeed          = 25;
@@ -40,7 +40,7 @@ _powerupRandom              = 10;
 _debugString                = "round, spawn, amount, chance";
 _bounceHorizontal           = 0;
 _bounceVertical             = 0;
-_pushBallSpeed              = 10;
+_pushBallSpeed              = 15;
 _playerStun                 = 0;
 
 
@@ -53,7 +53,7 @@ _hp                         = 250;
 _hpAmount                   = 60;
 _lastMove                   = false;
 _lastTelepor                = -200;
-_mouseclick                 = false;
+_mouseclickRight            = false;
 _mouseX                     = 0;
 _mouseY                     = 0;
 _hpDecrementPause           = false;
@@ -62,6 +62,9 @@ _lastKeyInput               = "";
 _fps                        =0;
 _fpsWithoutCalc             =0;
 _fpsCalcDiffernce           =0;
+_windX                      =0;
+_windY                      =0;
+_menue                      =false;
 
 //effects
 

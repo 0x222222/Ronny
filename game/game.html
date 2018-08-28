@@ -5,10 +5,12 @@
     <link rel="stylesheet" type="text/css" href="style/main.css">
     <link rel="stylesheet" type="text/css" href="style/hud.css">
     <link rel="stylesheet" type="text/css" href="style/endscreen.css">
+    <link rel="stylesheet" type="text/css" href="style/wind.css">
+    <link rel="stylesheet" type="text/css" href="style/controlTable.css">
 </head>
 
 <body oncontextmenu="return false" >
-<div id="hud">
+<div id="hud" style="z-index: 2">
     <a id="score"></a>
     <table id="healthtableOverlayer">
         <tr>
@@ -49,6 +51,13 @@
 <div id="gameboxOverlayer"></div>
 <div id="gameboxOverlayerStun"></div>
 
+<div id="wind">
+    <div id="wind4"></div>
+    <div id="wind3"></div>
+    <div id="wind2"></div>
+    <div id="wind1"></div>
+</div>
+
 <div id="gamebox">
 
     <div id="debug">
@@ -82,6 +91,52 @@
 
 <div id="player"></div>
 </div>
+
+<div id="endscreenBackground"></div>
+<div id="endscreen">
+    <div id="endscreenInnerBox">
+        <table id="controlTable">
+            <tr>
+                <td><img class="controlTableIMG" src="assets/keys/WKey.png"><img class="controlTableIMG" src="assets/keys/arrowUp.png"></td>
+                <td>Up</td>
+            </tr>
+            <tr>
+                <td><img class="controlTableIMG" src="assets/keys/SKey.png"><img class="controlTableIMG" src="assets/keys/arrowDown.png"></td>
+                <td>Down</td>
+            </tr>
+            <tr>
+                <td><img class="controlTableIMG" src="assets/keys/AKey.png"><img class="controlTableIMG" src="assets/keys/arrowLeft.png"></td>
+                <td>Left</td>
+            </tr>
+            <tr>
+                <td><img class="controlTableIMG" src="assets/keys/DKey.png"><img class="controlTableIMG" src="assets/keys/arrowRight.png"></td>
+                <td>Right</td>
+            </tr>
+            <tr>
+                <td><img class="controlTableIMG" src="assets/keys/SpaceKey.png"></td>
+                <td>Rush</td>
+            </tr>
+            <tr>
+                <td><img class="controlTableIMG" src="assets/keys/CKey.png"></td>
+                <td>Teleport </td>
+            </tr>
+            <tr>
+                <td><img class="controlTableIMG" src="assets/keys/ESC.png"></td>
+                <td>Menu</td>
+            </tr>
+            <tr>
+                <td><img class="controlTableIMG" src="assets/keys/ESC.png"><img class="controlTableIMG" src="assets/keys/RKey.png"></td>
+                <td>Retry</td>
+            </tr>
+            <tr>
+                <td><img class="controlTableIMG" src="assets/keys/mouse.png"></td>
+                <td>Shoot</td>
+            </tr>
+        </table>
+        <div id="scoreMenue"></div>
+    </div>
+</div>
+
 </body>
 
 
@@ -101,6 +156,7 @@
 <script src="scriptLibrary/powerUp.js"></script>
 <script src="scriptLibrary/effects.js"></script>
 <script src="scriptLibrary/debug.js"></script>
+<script src="jquery-3.3.1.min.js"></script>
 
 
 
@@ -125,56 +181,51 @@
     async function game() {
         while(_live){
             //head*******************************************
+            if(!_menue) {
+                _time += _gameSpeed;
 
-            _time += _gameSpeed;
-            glowHealth();
-            //_gameSpeed = 20 - (_time/2000)
-            movePlayer();
+                //_gameSpeed = 20 - (_time/2000)
+                movePlayer();
 
-            //document.getElementById("gamebox").style.filter = "hue-rotate("+(_time/10%360)+"deg)";
+                //document.getElementById("gamebox").style.filter = "hue-rotate("+(_time/10%360)+"deg)";
 
-            //body*******************************************
-            fps();
-            shot();
-            getRound();
-
-            //Could be parallel
-
-            clock = (new Date()).getTime();
-
-            moveShot();
-            moveInfinityBall();
-
-            moveBall();
-            movePushBall();
-
-            moveFastBall();
-            moveFollowBall();
+                //body*******************************************
+                fps();
+                shot();
+                getRound();
 
 
-            //console.log((new Date()).getTime()-clock);
+                //Could be parallel
 
-            changePlayerColor();
-            powerupCollect();
-            removeVignette();
+                clock = (new Date()).getTime();
+
+                moveShot();
+                moveInfinityBall();
+
+                moveBall();
+                movePushBall();
+
+                moveFastBall();
+                moveFollowBall();
 
 
-            //console.log("test");
+                //console.log((new Date()).getTime()-clock);
+
+                changePlayerColor();
+                powerupCollect();
+                removeVignette();
 
 
+                //console.log("test");
 
 
-
-            //foot********************************************
-
+                //foot********************************************
+            }
             //noinspection BadExpressionStatementJS,UnterminatedStatementJS
+            glowHealth();
             await sleep(_gameSpeed);
         }
 
     }
     game();
 </script>
-
-<div id="endscreen">
-
-</div>

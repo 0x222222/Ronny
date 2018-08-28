@@ -3,7 +3,7 @@ var shots = [];
 
 
 function shot() {
-    if(_mouseclick&&shots.length<_maxShots){
+    if(_mouseclickRight&&shots.length<_maxShots){
 
         var div = document.createElement("div");
         div.id = "shot"+shots.length;
@@ -44,7 +44,7 @@ function shot() {
             ]
         );
     }
-    _mouseclick = false;
+    _mouseclickRight = false;
 
     document.getElementById("debugExtend6").innerHTML = " Shots: "+shots.length+"/"+_maxShots;
 }

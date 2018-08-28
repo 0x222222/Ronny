@@ -40,7 +40,7 @@ function damage() {
 
     if(_hp<1){
         _hp = 0;
-        _live = _godmode
+        death();
     }
     document.getElementById("gameboxOverlayer").style.boxShadow ="inset 0px 0px 1500px  red ";
     _lastDamage = _time;
@@ -52,7 +52,7 @@ function damagePercentage(value) {
 
     if(_hp<1){
         _hp = 0;
-        _live = _godmode
+        death()
     }
     document.getElementById("gameboxOverlayer").style.boxShadow ="inset 0px 0px 1500px  red ";
     _lastDamage = _time;
@@ -70,7 +70,7 @@ function changeHp(value) {
 
     if(_hp<1){
         _hp = 0;
-        _live = _godmode
+        death()
     }
 }
 
