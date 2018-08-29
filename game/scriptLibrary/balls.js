@@ -1,7 +1,7 @@
 
 //standard ball
 
-var balls = [];
+balls = [];
 
 
 
@@ -15,7 +15,7 @@ function createBall() {
     document.getElementById("gamebox").appendChild(div);
     spawnSide("ball"+(balls.length));
     balls.push(
-        [Math.random().toFixed(3)/2+0.25, ran(0,1), ran(0,1)]
+        [Math.random().toFixed(3)/2+0.25, ran(0,2), ran(0,2)]
     );
 }
 
@@ -49,7 +49,7 @@ function moveBall() {
         //test for collision
 
         if(collsionRound(("ball"+i),"player")){
-            damage();
+            damagePercentage(60);
         }
 
     }
@@ -62,7 +62,7 @@ var fastBalls = [];
 function createFastBall() {
     i = fastBalls.length;
     fastBalls.push(
-        [Math.random().toFixed(3)/1.25+0.1, ran(0,1), ran(0,1),_round-_fastBallRegneration]
+        [Math.random().toFixed(3)/1.25+0.1, ran(0,2), ran(0,2),_round-_fastBallRegneration]
     );
     var div = document.createElement("div");
     div.id = "fastBall"+i;
@@ -258,7 +258,7 @@ function moveFollowBall() {
         }
         if(collsionRound("player", "followBall"+i)){
 
-            damage();
+            damagePercentage(70);
         }
     }
 }
@@ -288,19 +288,19 @@ function redirectFollowBall(id) {
 
 //standard infinityBalls
 
-var infinityBalls = [];
+let infinityBalls = [];
 
 
 
 
 function createInfinityBall() {
-    var round = infinityBalls.length;
+    let round = infinityBalls.length;
     infinityBalls.push(
         [
-            Math.random().toFixed(3)/2+0.25, ran(0,1), ran(0,1)]
+            Math.random().toFixed(3)/2+0.25, ran(0,2), ran(0,2)]
     );
 
-    var div = document.createElement("div");
+    let div = document.createElement("div");
     div.id = "infinityBalls"+round;
     div.className = "infintyball";
     document.getElementById("gamebox").appendChild(div);
@@ -375,7 +375,7 @@ function createPushBall() {
     document.getElementById("gamebox").appendChild(div);
     spawnSide("pushBall"+(pushBalls.length));
     pushBalls.push(
-        [Math.random().toFixed(3)/2+0.25, ran(0,1), ran(0,1), _pushBallSpeed]
+        [Math.random().toFixed(3)/2+0.25, ran(0,2), ran(0,2), _pushBallSpeed]
     );
 }
 
@@ -423,6 +423,7 @@ function movePushBall() {
                     pushBalls[i][3]--;
                 }
             }
+            stun(25);
         }
 
     }

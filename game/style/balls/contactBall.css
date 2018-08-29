@@ -1,0 +1,10 @@
+.contactBall {
+    animation: rotate 4s infinite alternate;
+    border-radius: 50%;
+    box-shadow: 0 0 50px black;
+    background-image: url("../../assets/contactBall.png");
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    content: '';
+}

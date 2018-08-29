@@ -66,7 +66,7 @@ function round() {
             createBall();
         }
 
-        if(_round%3===0&&_fastBallAmount>=fastBalls.length&&_round>=12||_round===100||_round===120){
+        if(_round%3===0&&_fastBallAmount>=fastBalls.length&&_round>=12){
             createFastBall();
         }
 
@@ -80,6 +80,14 @@ function round() {
 
         if(_round===80||_round===150){
             createInfinityBall()
+        }
+
+        if(_round===120||_round===300){
+            createContactBall();
+        }
+
+        if(_round===200){
+            createInviBall()
         }
     }
 }

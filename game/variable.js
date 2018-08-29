@@ -7,7 +7,7 @@
 //w = h = 60
 
 //Options
-_spawn                      = true;
+_spawn                      = false;
 _ticksForRound              = 1000;
 _gameSpeed                  = 25; //start
 _score                      = 0;
@@ -42,6 +42,8 @@ _bounceHorizontal           = 0;
 _bounceVertical             = 0;
 _pushBallSpeed              = 15;
 _playerStun                 = 0;
+_inviBallSpeed              = 10;
+_contactBallSpeed           = 30;
 
 
 //runtime

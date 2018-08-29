@@ -1,0 +1,8 @@
+.beastBall {
+    background-image: url("../../assets/beastBall.png");
+    width: 90px;
+    height: 90px;
+    position: fixed;
+    content: '';
+    background-size: cover;
+}

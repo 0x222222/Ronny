@@ -29,6 +29,7 @@ body {
 .ball{
     border-radius: 50%;
     box-shadow: 0 0 50px black;
+    background-image: url("../assets/redBall.png");
 }
 
 #player {
@@ -51,11 +52,6 @@ body {
     width: 70px;
     height: 70px;
     position: fixed;
-}
-
-/*noinspection CssUnusedSymbol*/
-.ball {
-    background-image: url("../assets/redBall.png");
 }
 
 /*noinspection CssUnusedSymbol*/

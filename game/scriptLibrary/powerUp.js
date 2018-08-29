@@ -192,7 +192,6 @@ function getEffectOfPowerup(number) {
                 addEffect("toFast",10,"To fast","powerup2");
                 _playerSpeed+=10;
                 break;
-                break;
         }
         return;
     }

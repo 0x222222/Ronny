@@ -7,6 +7,9 @@
     <link rel="stylesheet" type="text/css" href="style/endscreen.css">
     <link rel="stylesheet" type="text/css" href="style/wind.css">
     <link rel="stylesheet" type="text/css" href="style/controlTable.css">
+    <link rel="stylesheet" type="text/css" href="style/balls/inviBall.css">
+    <link rel="stylesheet" type="text/css" href="style/balls/contactBall.css">
+    <link rel="stylesheet" type="text/css" href="style/balls/beastBall.css">
 </head>
 
 <body oncontextmenu="return false" >
@@ -156,6 +159,9 @@
 <script src="scriptLibrary/powerUp.js"></script>
 <script src="scriptLibrary/effects.js"></script>
 <script src="scriptLibrary/debug.js"></script>
+<script src="scriptLibrary/balls/inviBall.js"></script>
+<script src="scriptLibrary/balls/contactBall.js"></script>
+<script src="scriptLibrary/balls/beastBall.js"></script>
 <script src="jquery-3.3.1.min.js"></script>
 
 
@@ -166,7 +172,7 @@
     document.getElementById("player").style.top = "730px";
     document.getElementById("player").style.left = "1570px";
     showHealth();
-
+    //createBeastBall();
     //sleep function
 
 
@@ -208,6 +214,10 @@
                 moveFastBall();
                 moveFollowBall();
 
+                moveInviBall();
+                moveContactBall();
+
+                moveBeastBall();
 
                 //console.log((new Date()).getTime()-clock);
 

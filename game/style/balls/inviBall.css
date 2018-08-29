@@ -1,0 +1,19 @@
+.inviBall {
+    animation: rotate 4s infinite alternate, InviVisi 2s infinite alternate;
+    border-radius: 50%;
+    box-shadow: 0 0 50px black;
+    background-image: url("../../assets/inviBall.png");
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    content: '';
+}
+
+
+
+@keyframes InviVisi {
+    0% {filter: opacity(100%)}
+    40% {filter: opacity(100%)}
+    95% {filter: opacity(10%)}
+    100% {filter: opacity(2%)}
+}
