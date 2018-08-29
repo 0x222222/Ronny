@@ -89,6 +89,12 @@ function round() {
         if(_round===200){
             createInviBall()
         }
+
+        if(_round===30){
+            for(a=0;a>30;a++){
+                createPushBall()
+            }
+        }
     }
 }
 

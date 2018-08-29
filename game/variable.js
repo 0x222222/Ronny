@@ -7,7 +7,7 @@
 //w = h = 60
 
 //Options
-_spawn                      = false;
+_spawn                      = true;
 _ticksForRound              = 1000;
 _gameSpeed                  = 25; //start
 _score                      = 0;
