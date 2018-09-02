@@ -140,3 +140,22 @@ function death() {
         toggleMenu();
     }
 }
+
+var info = [];
+
+//info layer
+//layer 0 = standart layer
+
+function addInfo(text, layer) {
+    if(layer===undefined){
+        layer=0
+    }
+    info.push(
+        [text, layer, _round]
+    );
+    updateInfoDisplay();
+}
+
+function updateInfoDisplay() {
+    log("Round:"+info[info.length-1][2]+"|"+info[info.length-1][0]);
+}

@@ -7,7 +7,7 @@
 //w = h = 60
 
 //Options
-_spawn                      = true;
+_spawn                      = false;
 _ticksForRound              = 1000;
 _gameSpeed                  = 25; //start
 _score                      = 0;
@@ -16,7 +16,7 @@ _maxGamespeed               = 20;
 _playerSpeed                = 15;
 _ballSpeed                  = 18;
 _fastBallSpeed              = 60;
-_godmode                    = false;
+_godmode                    = true;
 _fastBallRegneration        = 5;
 _ballAmount                 = 3;
 _fastBallAmount             = 4;
@@ -44,6 +44,7 @@ _pushBallSpeed              = 15;
 _playerStun                 = 0;
 _inviBallSpeed              = 10;
 _contactBallSpeed           = 30;
+_ballG2Speed                = 18;
 
 
 //runtime
@@ -51,7 +52,7 @@ _live                       = true;
 _time                       = 0;
 _round                      = 0;
 _damage                     = 35;
-_hp                         = 250;
+_hp                         = 1;//250
 _hpAmount                   = 60;
 _lastMove                   = false;
 _lastTelepor                = -200;

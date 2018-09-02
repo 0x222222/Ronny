@@ -5,7 +5,7 @@ function spawnSide(obj) {
 
     heigth = parseInt(document.getElementById(obj).offsetHeight);
     width = parseInt(document.getElementById(obj).offsetWidth);
-    switch (ran(0,3)){
+    switch (ran(0,4)){
         case 0:
             objDom.top =  "0px";
             objDom.left = ran(0,3200-width) + "px";

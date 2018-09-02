@@ -15,8 +15,8 @@ function shot() {
         movePlayerHor = 0;
         movePlayerVer = 0;
 
-        if(keyStatus.w){movePlayerHor += 1}
-        if(keyStatus.a){movePlayerVer += 1}
+        if(keyStatus.w){movePlayerHor += 2}
+        if(keyStatus.a){movePlayerVer += 2}
         if(keyStatus.s){movePlayerHor += 2}
         if(keyStatus.d){movePlayerVer += 2}
 
