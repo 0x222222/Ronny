@@ -79,6 +79,7 @@ function handle(e) {
             $( "#debug" ).slideToggle( "fast");
             $( "#debugExtend" ).slideToggle( "fast");
         }
+        specialInputDown(e.key);
     }
     if(e.type === "keyup") {
         keyStatus[e.key] = false;

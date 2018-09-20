@@ -16,10 +16,10 @@ function movePlayer() {
     movePlayerVer = 0;
     keynumber = 0;
 
-    if(keyStatus.w&&_playerStun===0){movePlayerHor += -_playerSpeed; keynumber++}
-    if(keyStatus.a&&_playerStun===0){movePlayerVer += -_playerSpeed; keynumber++}
-    if(keyStatus.s&&_playerStun===0){movePlayerHor += _playerSpeed;  keynumber++}
-    if(keyStatus.d&&_playerStun===0){movePlayerVer += _playerSpeed;  keynumber++}
+    if(keyStatus.w&&_playerStun<=0){movePlayerHor += -_playerSpeed; keynumber++}
+    if(keyStatus.a&&_playerStun<=0){movePlayerVer += -_playerSpeed; keynumber++}
+    if(keyStatus.s&&_playerStun<=0){movePlayerHor += _playerSpeed;  keynumber++}
+    if(keyStatus.d&&_playerStun<=0){movePlayerVer += _playerSpeed;  keynumber++}
 
     if(keynumber===1){
         movePlayerHor = movePlayerHor*1.4;
@@ -69,9 +69,12 @@ function movePlayer() {
 
     if(_playerStun>0){
         _playerStun--;
-    } else {
+    }
+    if(_playerStun===0){
+        _playerStun = -1;
         document.getElementById("gameboxOverlayerStun").style.boxShadow ="";
     }
+
 
 
     if(collisionBorderPlayer()){

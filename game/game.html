@@ -162,6 +162,7 @@
 <script src="scriptLibrary/balls/contactBall.js"></script>
 <script src="scriptLibrary/balls/beastBall.js"></script>
 <script src="scriptLibrary/balls/ballG2.js"></script>
+<script src="scriptLibrary/handleSpecialInput.js"></script>
 <script src="jquery-3.3.1.min.js"></script>
 
 <script>
@@ -178,7 +179,7 @@
     document.getElementById("player").style.top = "730px";
     document.getElementById("player").style.left = "1570px";
     showHealth();
-    for(i=0;i<200;i++) {
+    for(i=0;i<00;i++) {
         //createBall();
         createBallG2();
     }
@@ -199,6 +200,7 @@
         while(_live){
             //head*******************************************
             if(!_menue) {
+
                 _time += _gameSpeed;
 
                 //_gameSpeed = 20 - (_time/2000)
