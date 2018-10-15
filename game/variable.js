@@ -45,6 +45,7 @@ _playerStun                 = 0;
 _inviBallSpeed              = 10;
 _contactBallSpeed           = 30;
 _ballG2Speed                = 18;
+_CellBallSpeed              = 15;
 
 
 //runtime
@@ -52,7 +53,7 @@ _live                       = true;
 _time                       = 0;
 _round                      = 0;
 _damage                     = 35;
-_hp                         = 1;//250
+_hp                         = 250;//250
 _hpAmount                   = 60;
 _lastMove                   = false;
 _lastTelepor                = -200;

@@ -1,0 +1,11 @@
+.cellBall {
+    animation: rotate 4s infinite alternate;
+    border-radius: 50%;
+    box-shadow: 0 0 50px black;
+    background-image: url("../../assets/cellBall.png");
+    background-size: cover;
+    width:  40px;
+    height: 40px;
+    position: fixed;
+    content: '';
+}

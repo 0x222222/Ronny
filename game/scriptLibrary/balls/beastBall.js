@@ -16,14 +16,14 @@ function createBeastBall() {
 
 function moveBeastBall() {
 
-    for(i=0;i<beastBalls.length;i++){
+    for(let i=0;i<beastBalls.length;i++){
 
 
         //Change mode when [3] less than round
         //change when you like it with -1
         //when value is -2 the function has to give a new value
         if(beastBalls[i][3]<_round&&beastBalls[i][3]>=0){
-            beastBalls[i][4]=ran(0,2);
+            beastBalls[i][4]=ran(0,3);
             beastBalls[i][3]=-2;
         }
 
@@ -131,6 +131,50 @@ function moveBeastBall() {
             }
         }
         //*****************************MODE3*************************************************************
+        if(_round&&beastBalls[i][4]===2){
+            if( beastBalls[i][3]===-2){
+                beastBalls[i][3]= 1+_round;
+                beastBalls[i][0]= Math.random().toFixed(3)/2+0.25;
+                beastBalls[i][1]= ran(0,1);
+                beastBalls[i][2]= ran(0,1);
+                redirectBeastBalls(i);
+                _beastBallSpeed = 10;
+            }
+
+            movHeigth = parseInt(document.getElementById(("beastBall"+i)).offsetHeight);
+            movWidth = parseInt(document.getElementById(("beastBall"+i)).offsetWidth);
+            movTop =  parseInt(document.getElementById(("beastBall"+i)).style.top.slice(0, -2));
+            movLeft = parseInt(document.getElementById(("beastBall"+i)).style.left.slice(0, -2));
+            if(movTop<0||(movTop+movHeigth)>1520){
+                beastBalls[i][1]= 1 - beastBalls[i][1];
+                redirectBeastBalls(i)
+            }
+            if(movLeft<0||(movLeft+movWidth)>3200){
+                beastBalls[i][2]= 1 - beastBalls[i][2];
+                redirectBeastBalls(i)
+            }
+
+            if(beastBalls[i][1]===1){
+                hor = _beastBallSpeed*beastBalls[i][0]
+            } else {
+                hor = _beastBallSpeed*-1*beastBalls[i][0]
+            }
+            if(beastBalls[i][2]===1){
+                ver = _beastBallSpeed*(1-beastBalls[i][0])
+            } else {
+                ver = _beastBallSpeed*-1*(1-beastBalls[i][0])
+            }
+            move(hor, ver, ("beastBall"+i));
+
+
+            //test for collision
+
+            let iteration = i;
+
+            if(collsionRound(("beastBall"+i),"player")){
+                damage();
+            }
+        }
         //*****************************MODE4*************************************************************
         //*****************************MODE5*************************************************************
         //*****************************MODE6*************************************************************

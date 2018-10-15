@@ -3,6 +3,7 @@ body {
     background-color: black;
     overflow: hidden;
     cursor: crosshair;
+    zoom: 30%;
 }
 
 /*noinspection CssUnusedSymbol,CssUnusedSymbol*/

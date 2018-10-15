@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="style/balls/inviBall.css">
     <link rel="stylesheet" type="text/css" href="style/balls/contactBall.css">
     <link rel="stylesheet" type="text/css" href="style/balls/beastBall.css">
+    <link rel="stylesheet" type="text/css" href="style/balls/cellBall.css">
 </head>
 
 <body oncontextmenu="return false" >
@@ -163,6 +164,7 @@
 <script src="scriptLibrary/balls/beastBall.js"></script>
 <script src="scriptLibrary/balls/ballG2.js"></script>
 <script src="scriptLibrary/handleSpecialInput.js"></script>
+<script src="scriptLibrary/balls/cellBall.js"></script>
 <script src="jquery-3.3.1.min.js"></script>
 
 <script>
@@ -179,10 +181,10 @@
     document.getElementById("player").style.top = "730px";
     document.getElementById("player").style.left = "1570px";
     showHealth();
-    for(i=0;i<00;i++) {
-        //createBall();
-        createBallG2();
+    for(i=0;i<40;i++) {
+    createCellBall()
     }
+
     //createBeastBall();
     //createBeastBall();
     //sleep function
@@ -229,6 +231,7 @@
                 moveContactBall();
 
                 moveBeastBall();
+                moveCellBall();
 
 
 
@@ -238,8 +241,8 @@
 
                 clock = (new Date()).getTime();
                     moveBall();
-                    moveBall();
-                    moveBall();
+                    //moveBall();
+                    //moveBall();
                 _g1c++;
                 _g1 += ((new Date()).getTime()-clock);
 
@@ -250,9 +253,9 @@
                 _g2c++;
                 _g2 += ((new Date()).getTime()-clock);
 
-                log("G1: "+Math.round(_g1/_g1c)+"ms | G2: "+Math.round(_g2/_g2c)+"ms")
+                //log("G1: "+Math.round(_g1/_g1c)+"ms | G2: "+Math.round(_g2/_g2c)+"ms")
 
-                //console.log("test");
+                console.log(cellBalls.length);
 
 
                 //foot********************************************

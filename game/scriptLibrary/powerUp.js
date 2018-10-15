@@ -136,7 +136,7 @@ function getEffectOfPowerup(number) {
                 break;
             case 4:
                 _maxShots-=2;
-                addActiveEffect("powerup2", "Reduve Shots");
+                addActiveEffect("powerup2", "Reduce Shots");
                 break;
             case 5:
                 switch (ran(0,8)){
@@ -246,7 +246,6 @@ function addActiveEffect(type, name) {
     let text="";
     for (o=0;o<powerupsAktiv.length;o++){
         text="<p class='"+powerupsAktiv[o][0]+"'>"+powerupsAktiv[o][1]+"<p/>"+text;
-        log(text)
     }
     document.getElementById("effectLast").innerHTML = text;
 }
