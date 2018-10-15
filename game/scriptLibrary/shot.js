@@ -4,8 +4,8 @@ var shots = [];
 
 function shot() {
     if(_mouseclickRight&&shots.length<_maxShots){
-
-        var div = document.createElement("div");
+        playEffect("shot");
+        let div = document.createElement("div");
         div.id = "shot"+shots.length;
         div.className = "shot";
         div.style.top  = PT()-15+"px";

@@ -41,7 +41,7 @@ function w(obj) {
 function distance(obj1, obj2) {
     disHor = posT(obj1) - posT(obj2);
     disVer = posL(obj1) - posL(obj2);
-    return Math.sqrt(Math.pow(disHor,2)+Math.pow(disVer,2));
+    return Math.hypot(disHor, disVer)
 }
 
 //distance up and side
@@ -97,7 +97,8 @@ function log(text) {
     console.log(text)
 }
 
-function stun(value) {
+function stun(value){
+    playEffect("bounce");
     document.getElementById("gameboxOverlayerStun").style.boxShadow ="inset 0px 0px 1500px purple";
     _playerStun = value;
 }
@@ -138,10 +139,12 @@ function death() {
     if(!_godmode){
         _live = false;
         toggleMenu();
+        playEffect("death");
+        playEffect("endmusic");
     }
 }
 
-var info = [];
+let info = [];
 
 //info layer
 //layer 0 = standart layer
@@ -278,4 +281,9 @@ function calcForce(deg1,deg2,f1,f2) {
 
 
  return [force,angle]
+}
+
+function posPlayerVariable() {
+    _posTopPlayer =document.getElementById("player").offsetTop;
+    _posLeftPlayer=document.getElementById("player").offsetLeft;
 }

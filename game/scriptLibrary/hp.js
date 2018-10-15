@@ -42,8 +42,9 @@ function damage() {
         _hp = 0;
         death();
     }
-    document.getElementById("gameboxOverlayer").style.boxShadow ="inset 0px 0px 1500px  red ";
+    //document.getElementById("gamebox").style.boxShadow ="inset 0px 0px 1500px  red ";
     _lastDamage = _time;
+    playDamageSound();
     showHealth();
 }
 
@@ -54,9 +55,10 @@ function damagePercentage(value) {
         _hp = 0;
         death()
     }
-    document.getElementById("gameboxOverlayer").style.boxShadow ="inset 0px 0px 1500px  red ";
+    //document.getElementById("gamebox").style.boxShadow ="inset 0px 0px 1500px  red ";
     _lastDamage = _time;
     showHealth();
+    playDamageSound();
 }
 
 function damageIncrease() {
