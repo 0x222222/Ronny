@@ -27,13 +27,9 @@ function createBallG2() {
 }
 
 
-widthPlayer   = w("player");
+
 
 function moveBallG2() {
-
-
-    posTopPlayer  = PT();
-    posLeftPlayer = PL("player");
 
     if(0<ballG2s.length){
         movHeigth = ballG2s[0][5];
@@ -79,16 +75,18 @@ function moveBallG2() {
         posTopBall  = ballG2s[i][3]+ballG2s[i][5]/2;
         posLeftBall = ballG2s[i][4]+ballG2s[i][6]/2;
 
-        disHor = posTopPlayer - posTopBall;
-        disVer = posLeftPlayer - posLeftBall;
 
-        distanceG2 = Math.sqrt(Math.pow(disHor,2)+Math.pow(disVer,2));
 
-        rad12 = (widthPlayer/2 + movWidth/2);
 
-        if(distanceG2 < rad12){
+        if(collisionG2(movWidth, posTopBall, posLeftBall)){
             damagePercentage(60);
         }
-
     }
+}
+
+function collisionG2(width, posTopBall, postLeftBall) {
+    disHor = _posTopPlayer  - posTopBall;
+    disVer = _posLeftPlayer - posLeftBall;
+    rad = _widthPlayer/2 + width/2;
+    return(distance<rad)
 }

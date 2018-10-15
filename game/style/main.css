@@ -5,6 +5,7 @@ body {
     cursor: crosshair;
 }
 
+
 /*noinspection CssUnusedSymbol,CssUnusedSymbol*/
 .ball, .infintyball {
     animation-duration: 4s;

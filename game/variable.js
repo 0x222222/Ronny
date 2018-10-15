@@ -8,6 +8,7 @@
 
 //Options
 _spawn                      = false;
+_widthPlayer                = document.getElementById("player").offsetWidth;
 _ticksForRound              = 1000;
 _gameSpeed                  = 25; //start
 _score                      = 0;
@@ -16,7 +17,7 @@ _maxGamespeed               = 20;
 _playerSpeed                = 15;
 _ballSpeed                  = 18;
 _fastBallSpeed              = 60;
-_godmode                    = true;
+_godmode                    = false;
 _fastBallRegneration        = 5;
 _ballAmount                 = 3;
 _fastBallAmount             = 4;
@@ -68,6 +69,8 @@ _fpsCalcDiffernce           =0;
 _windX                      =0;
 _windY                      =0;
 _menue                      =false;
+_posTopPlayer               = 0;
+_posLeftPlayer              = 0;
 
 //effects
 

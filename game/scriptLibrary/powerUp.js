@@ -4,6 +4,7 @@ var powerups = [];
 var powerupsAktiv = [];
 
 function spawnPowerup() {
+    playEffect("spawn");
     n = powerups.length;
     powerups.push(
         [ran(1,100), _round]
@@ -35,6 +36,7 @@ function powerupCollect() {
 
         if(powerups[a][1]+_powerupLifetime<_round){
             removePowerup(a);
+            playEffect("despawn");
             continue;
         }
 
@@ -99,6 +101,7 @@ function getEffectOfPowerup(number) {
 
     //powerup level 3
     if(powerups[number][0]>95){
+        playEffect("powerupExtreme");
         switch (ran(0,4)){
             case 0:
                 addHealth(1000);
@@ -121,6 +124,7 @@ function getEffectOfPowerup(number) {
     }
     //powerup level 2
     if(powerups[number][0]<=20){
+        playEffect("debuff");
         switch (ran(0,8)){
             case 0:
                 stun(75);
@@ -196,6 +200,7 @@ function getEffectOfPowerup(number) {
         return;
     }
     //powerup level 1
+    playEffect("powerup");
     switch (ran(0,7)){
         case 0:
         case 1:
@@ -225,7 +230,7 @@ function getEffectOfPowerup(number) {
 
 function displayPowerups() {
 
-    var text = "";
+    let text = "";
 
     for (o=0;o<buffs.length;o++){
         text+="<p class='"+buffs[o][4]+"'>"+buffs[o][3]+"<p/>"
@@ -246,7 +251,7 @@ function addActiveEffect(type, name) {
     let text="";
     for (o=0;o<powerupsAktiv.length;o++){
         text="<p class='"+powerupsAktiv[o][0]+"'>"+powerupsAktiv[o][1]+"<p/>"+text;
-        log(text)
+        //log(text)
     }
     document.getElementById("effectLast").innerHTML = text;
 }

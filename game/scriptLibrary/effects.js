@@ -14,7 +14,7 @@ function glowHealth() {
 
 function removeVignette() {
     if(_lastDamage+100<_time){
-        document.getElementById("gameboxOverlayer").style.boxShadow ="";
+        document.getElementById("gamebox").style.boxShadow ="";
     }
 }
 

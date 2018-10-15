@@ -162,6 +162,8 @@
 <script src="scriptLibrary/balls/contactBall.js"></script>
 <script src="scriptLibrary/balls/beastBall.js"></script>
 <script src="scriptLibrary/balls/ballG2.js"></script>
+<script src="scriptLibrary/zoom.js"></script>
+<script src="scriptLibrary/music.js"></script>
 <script src="jquery-3.3.1.min.js"></script>
 
 <script>
@@ -178,10 +180,11 @@
     document.getElementById("player").style.top = "730px";
     document.getElementById("player").style.left = "1570px";
     showHealth();
-    for(i=0;i<200;i++) {
-        //createBall();
+    for(i=0;i<1;i++) {
         createBallG2();
     }
+
+    //backgroundmusic();
     //createBeastBall();
     //createBeastBall();
     //sleep function
@@ -192,6 +195,7 @@
            x => { setTimeout(x, ms)}
         )
     }
+
     //main function
 
     //noinspection BadExpressionStatementJS
@@ -200,7 +204,7 @@
             //head*******************************************
             if(!_menue) {
                 _time += _gameSpeed;
-
+                posPlayerVariable();
                 //_gameSpeed = 20 - (_time/2000)
                 movePlayer();
 
@@ -236,19 +240,14 @@
 
                 clock = (new Date()).getTime();
                     moveBall();
-                    moveBall();
-                    moveBall();
                 _g1c++;
                 _g1 += ((new Date()).getTime()-clock);
 
                 clock = (new Date()).getTime();
                     moveBallG2();
-                    moveBallG2();
-                    moveBallG2();
                 _g2c++;
                 _g2 += ((new Date()).getTime()-clock);
-
-                log("G1: "+Math.round(_g1/_g1c)+"ms | G2: "+Math.round(_g2/_g2c)+"ms")
+                //log("G1: "+Math.round(_g1/_g1c)+"ms | G2: "+Math.round(_g2/_g2c)+"ms")
 
                 //console.log("test");
 
