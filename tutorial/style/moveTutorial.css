@@ -153,6 +153,6 @@ p[title] {
 
 @keyframes powerupCollect {
     0%{background-image: url("../../game/assets/powerup-ultra.png");}
-    84%{background-image: url("");}
+    84%{background-image: none;}
 }
 

@@ -1,0 +1,66 @@
+{
+  "title":"UNNAMED",
+  "description":"need configuration",
+  "spawnList": {
+    "0":[
+      "createBall"
+    ],
+    "2":[
+      "createBall"
+    ],
+    "3":[
+      "createFastBall"
+    ],
+    "4":[
+      "createBall"
+    ],
+    "6":[
+      "createBall",
+      "createFastBall"
+    ],
+    "8":[
+      "createBall"
+    ],
+    "9":[
+      "createFastBall"
+    ],
+    "10":[
+      "createBall"
+    ],
+    "12":[
+      "createFastBall"
+    ],
+    "35":[
+      "createFollowBall"
+    ],
+    "80":[
+      "createInfinityBall"
+    ],
+    "120":[
+      "createContactBall"
+    ],
+    "180":[
+      "createPushBall"
+    ],
+    "200":[
+      "createInviBall"
+    ],
+    "250":[
+      "createPushBall"
+    ],
+    "300":[
+      "createInfinityBall"
+    ],
+    "350":[
+      "createContactBall"
+    ],
+    "400":[
+      "createPushBall"
+    ]
+  }
+}
+
+
+
+
+

@@ -59,43 +59,11 @@ function round() {
         _debugString+="\n"+_round+","+0+","+powerups.length*4+","+((_powerupRandom+(Math.round((400-_round)/40)))*(1+powerups.length*4));
     }
 
-    //spawn
+
+
     if(_spawn){
-
-        if((_round%2===0&&_ballAmount>balls.length)||_round===40||_round===50||_round===80){
-            createBall();
-            playEffect("create");
-        }
-
-        if(_round%3===0&&_fastBallAmount>=fastBalls.length&&_round>=12){
-            createFastBall();
-            playEffect("create");
-        }
-
-        if(_round===35){
-            createFollowBall();
-            playEffect("create");
-        }
-        //180 and 250
-        if(_round===180||_round===250){
-            createPushBall();
-            playEffect("create");
-        }
-
-        if(_round===80||_round===150){
-            createInfinityBall();
-            playEffect("create");
-        }
-
-        if(_round===120||_round===300){
-            playEffect("create");
-            createContactBall();
-        }
-
-        if(_round===200){
-            createInviBall();
-            playEffect("create");
-        }
+        //spawn
+        spawnList()
     }
 }
 

@@ -52,7 +52,10 @@
     <div id="effectLast"></div>
 </div>
 
-<div id="gameboxOverlayer"></div>
+<div id="gameboxOverlayer">
+    <h1 id="fadeoutTitle"></h1>     <!--Placeholder max. 20 char-->
+    <a id="fadeoutDescription"></a> <!--Placeholder max. 60 char-->
+</div>
 <div id="gameboxOverlayerStun"></div>
 
 <div id="wind">
@@ -165,9 +168,11 @@
 <script src="scriptLibrary/balls/ballG2.js"></script>
 <script src="scriptLibrary/handleSpecialInput.js"></script>
 <script src="scriptLibrary/balls/cellBall.js"></script>
+<script src="scriptLibrary/urlParams.js"></script>
 <script src="scriptLibrary/zoom.js"></script>
 <script src="scriptLibrary/music.js"></script>
 <script src="jquery-3.3.1.min.js"></script>
+<script src="scriptLibrary/options.js"></script>
 
 <script>
     //debug
@@ -183,11 +188,10 @@
     document.getElementById("player").style.top = "730px";
     document.getElementById("player").style.left = "1570px";
     showHealth();
-    for(i=0;i<40;i++) {
-    createCellBall()
+    for(i=0;i<0;i++) {
+    createCellBall(5)
     }
-    //createBeastBall();
-    //createBeastBall();
+
     //sleep function
 
 
@@ -197,26 +201,28 @@
         )
     }
 
-    //main function
+    //get JSON Data
+
+    getJson();
+
 
     //noinspection BadExpressionStatementJS
     async function game() {
+
+
         while(_live){
             //head*******************************************
             if(!_menue) {
 
                 _time += _gameSpeed;
                 posPlayerVariable();
-                //_gameSpeed = 20 - (_time/2000)
-                movePlayer();
 
-                //document.getElementById("gamebox").style.filter = "hue-rotate("+(_time/10%360)+"deg)";
+                movePlayer();
 
                 //body*******************************************
                 fps();
                 shot();
                 getRound();
-
 
                 //Could be parallel
 
@@ -258,7 +264,7 @@
 
                 //log("G1: "+Math.round(_g1/_g1c)+"ms | G2: "+Math.round(_g2/_g2c)+"ms")
 
-                console.log(cellBalls.length);
+                //console.log(cellBalls.length);
 
 
                 //foot********************************************
@@ -269,5 +275,4 @@
         }
 
     }
-    game();
 </script>

@@ -77,11 +77,23 @@ function movePlayer() {
 
 
 
-    if(collisionBorderPlayer()){
-        damage();
+    collisionBorderPlayer();
+
+    if(movePlayerHor === 0 && movePlayerVer === 0){
+        _lastMove = false;
+        if(_playerSpeedReduce<10){
+            _playerSpeed--;
+            _playerSpeedReduce++
+        }
+    } else {
+        _lastMove = true;
+        if(_playerSpeedReduce>0){
+            _playerSpeed++;
+            _playerSpeedReduce--
+        }
     }
-    
-    _lastMove = !(movePlayerHor === 0 && movePlayerVer === 0);
+
+
     //Background
 
     pt = PT();
@@ -96,7 +108,7 @@ function movePlayer() {
 }
 
 function gameSpeedStanding() {
-    if(!_lastMove&&_gameSpeed>_minGamespeed){
+    if(!_lastMove&&_gameSpeed>_minGamespeed&&_round>10){
         _gameSpeed--;
     }
     if(_lastMove&&_gameSpeed<_maxGamespeed){

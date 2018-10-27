@@ -192,13 +192,12 @@ function createFollowBall() {
             (1/(Math.abs(PT()-posT(("followBall"+i)))+Math.abs(PL()-posL(("followBall"+i))))*(Math.abs(PT()-posT(("followBall"+i))))),
             up,
             side,
-            _round-4,
+            _round-ran(0,_followBallRegneration)+2,
             (distanceUS("player", ("followBall"+i))/_followBallSpeed).toFixed(1)
         ]
     );
     redirectFollowBall(i)
     //redirectFollowBall(round);
-
 }
 
 
@@ -211,9 +210,7 @@ function moveFollowBall() {
 
 
             if(followBalls[i][4]<1){
-                followBalls[i][3] = _round;
-
-
+                followBalls[i][3] = _round-ran(-2,_followBallRegneration);
             } else {
                 followBalls[i][4]--
             }
@@ -257,7 +254,6 @@ function moveFollowBall() {
             redirectFollowBall(i);
         }
         if(collsionRound("player", "followBall"+i)){
-
             damagePercentage(70);
         }
     }

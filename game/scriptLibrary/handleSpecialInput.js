@@ -9,8 +9,8 @@ function specialInputDown(key) {
 }
 
 function reduceStun() {
-    if(_playerStun>=50){
-        _playerStun-=50;
+    if(_playerStun>=30){
+        _playerStun-=30;
     } else {
         if(_playerStun>0){
             _playerStun = 0;

@@ -1,5 +1,3 @@
-
-
 function spawnSide(obj) {
     objDom = document.getElementById(obj).style;
 
@@ -30,5 +28,22 @@ function spawnSide(obj) {
 function spawn(ystart, ystop, xstart, xstop, obj) {
     tpT(obj,ran(ystart,ystop));
     tpL(obj,ran(xstart,xstop))
+}
+
+function spawnLeftRight(obj) {
+    objDom = document.getElementById(obj).style;
+
+    heigth = parseInt(document.getElementById(obj).offsetHeight);
+    width = parseInt(document.getElementById(obj).offsetWidth);
+    switch (ran(0,4)){
+        case 0:
+            objDom.top =  (1520-heigth) + "px";
+            objDom.left = (3200-width) + "px";
+            break;
+        case 1:
+            objDom.top =  (1520-heigth) + "px";
+            objDom.left = "0px";
+    }
+    return true;
 }
 

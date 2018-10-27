@@ -7,7 +7,7 @@
 //w = h = 60
 
 //Options
-_spawn                      = false;
+_spawn                      = true;
 _widthPlayer                = document.getElementById("player").offsetWidth;
 _ticksForRound              = 1000;
 _gameSpeed                  = 25; //start
@@ -19,7 +19,6 @@ _ballSpeed                  = 18;
 _fastBallSpeed              = 60;
 _godmode                    = false;
 _fastBallRegneration        = 5;
-_ballAmount                 = 3;
 _fastBallAmount             = 4;
 _followBallSpeed            = 60;
 _followBallRegneration      = 8;
@@ -64,16 +63,24 @@ _mouseY                     = 0;
 _hpDecrementPause           = false;
 _lastReg                    = 0;
 _lastKeyInput               = "";
-_fps                        =0;
-_fpsWithoutCalc             =0;
-_fpsCalcDiffernce           =0;
-_windX                      =0;
-_windY                      =0;
-_menue                      =false;
+_fps                        = 0;
+_fpsWithoutCalc             = 0;
+_fpsCalcDiffernce           = 0;
+_windX                      = 0;
+_windY                      = 0;
+_menue                      = false;
 _posTopPlayer               = 0;
 _posLeftPlayer              = 0;
+_lastDamageSound            = 0;
+_lastBounceSound            = 0;
+_playerSpeedReduce          = 0;
 
 //effects
 
 _glow = 0;
 _lastDamage = -100;
+
+
+//debug
+
+_DB_lastDamage = [];

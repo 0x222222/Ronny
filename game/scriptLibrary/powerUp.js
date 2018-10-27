@@ -21,7 +21,10 @@ function spawnPowerup() {
     if(quadrant("player")===1){spawn(760,   1520-length,    0,      1600-length,    "powerup"+n)}
     if(quadrant("player")===2){spawn(760,   1520-length,    1600,   3200-length,    "powerup"+n)}
     //powerup level 2 (Debuff)
-    if(powerups[n][0]<=20){document.getElementById("powerup"+n).style.backgroundImage = "url(assets/powerup-shot.png)";return}
+    if(powerups[n][0]<=20){
+        $("#powerup"+n).addClass("debuff");
+        return
+    }
     //powerup level 3
     if(powerups[n][0]>95) {
         document.getElementById("powerup"+n).style.backgroundImage = "url(assets/powerup-ultra.png)";
@@ -84,6 +87,7 @@ function removeEffect(name) {
     }
     if(name==="slowGameSpeed"){
         _gameSpeed-=10;
+        _playerSpeed-=4
     }
     if(name==="reduceDamage"){
         _damage+=35;
@@ -102,7 +106,7 @@ function getEffectOfPowerup(number) {
     //powerup level 3
     if(powerups[number][0]>95){
         playEffect("powerupExtreme");
-        switch (ran(0,4)){
+        switch (ran(0,6)){
             case 0:
                 addHealth(1000);
                 addActiveEffect("powerup3", "Health Boost");
@@ -119,13 +123,24 @@ function getEffectOfPowerup(number) {
                 _damage-=35;
                 addEffect("reduceDamage",10,"Reduce Damage","powerup3");
                 break;
+            case 4:
+                _hpReg=-2;
+                addActiveEffect("powerup3", "More Regeneration");
+                break;
+            case 5:
+                _gameSpeed+=5;
+                addActiveEffect("powerup3", "Gamespeed--");
+                break;
+            case 6:
+
+                break;
         }
         return;
     }
     //powerup level 2
     if(powerups[number][0]<=20){
         playEffect("debuff");
-        switch (ran(0,8)){
+        switch (ran(0,12)){
             case 0:
                 stun(75);
                 addActiveEffect("powerup2", "Stun");
@@ -140,7 +155,7 @@ function getEffectOfPowerup(number) {
                 break;
             case 4:
                 _maxShots-=2;
-                addActiveEffect("powerup2", "Reduve Shots");
+                addActiveEffect("powerup2", "Reduce Shots");
                 break;
             case 5:
                 switch (ran(0,8)){
@@ -188,7 +203,6 @@ function getEffectOfPowerup(number) {
                         break;
                     case 3:
                         _windY=-10;
-                        break;
                 }
                 addEffect("wind", 15,"Wind", "powerup2");
                 break;
@@ -196,12 +210,28 @@ function getEffectOfPowerup(number) {
                 addEffect("toFast",10,"To fast","powerup2");
                 _playerSpeed+=10;
                 break;
+            case 8:
+                createBall();
+                addActiveEffect("powerup2", "Red Ball");
+                break;
+            case 9:
+                createFastBall();
+                addActiveEffect("powerup2", "Fast Ball");
+                break;
+            case 10:
+                createFollowBall();
+                addActiveEffect("powerup2", "Follow Ball");
+                break;
+            case 11:
+                _gameSpeed-=4;
+                addActiveEffect("powerup2", "Gamespeed++");
+                break;
         }
         return;
     }
     //powerup level 1
     playEffect("powerup");
-    switch (ran(0,7)){
+    switch (ran(0,13)){
         case 0:
         case 1:
         case 2:
@@ -209,7 +239,6 @@ function getEffectOfPowerup(number) {
             amountOfHeal = (250+_round)*(8+powerups[number][1]-_round)/10;
             if(_hp+amountOfHeal>0){
                 addHealth(amountOfHeal);
-
             }
             addActiveEffect("powerup1", "Health Boost");
             break;
@@ -220,10 +249,41 @@ function getEffectOfPowerup(number) {
         case 5:
             addEffect("slowGameSpeed",10,"Slower Game","powerup1");
             _gameSpeed+=10;
+            _playerSpeed+=4;
             break;
         case 6:
             addActiveEffect("powerup1", "More Shots");
             _maxShots++;
+            break;
+        case 7:
+            _gameSpeed+=2;
+            addActiveEffect("powerup1", "Gamespeed--");
+            break;
+        case 8:
+            _damage-=3;
+            addActiveEffect("powerup1", "Reduce Damage");
+            break;
+        case 9:
+            _rushModeBoost++;
+            addActiveEffect("powerup1", "Faster rush");
+            break;
+        case 10:
+            _shootSpeed+=2;
+            addActiveEffect("powerup1", "Faster Shot");
+            break;
+        case 11:
+            _hpReg--;
+            addActiveEffect("powerup1", "More Regeneration");
+            break;
+        case 12:
+            _teleportDistance+=5;
+            if(_teleportEnergyCost>=2){
+                _teleportEnergyCost-=2
+            }
+            if(_teleportCooldown>=0.2){
+                _teleportCooldown-=0.2
+            }
+            addActiveEffect("powerup1", "Better Teleport");
             break;
     }
 }

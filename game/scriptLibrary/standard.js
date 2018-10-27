@@ -98,7 +98,7 @@ function log(text) {
 }
 
 function stun(value){
-    playEffect("bounce");
+    playBounceSound();
     document.getElementById("gameboxOverlayerStun").style.boxShadow ="inset 0px 0px 1500px purple";
     _playerStun = value;
 }
@@ -263,7 +263,7 @@ function calcForce(deg1,deg2,f1,f2) {
         deg = deg1-deg2;
     }
 
-    console.log("Deg: "+deg);
+    //console.log("Deg: "+deg);
 
     force = Math.sqrt(
         Math.pow(f1,2)

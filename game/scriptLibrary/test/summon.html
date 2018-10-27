@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <meta charset="UTF-8">
+    <title>Summon</title>
+</head>
+
+<script src="../../jquery-3.3.1.min.js"></script>
+
+<script>
+    function log(test){
+        console.log(test)
+    }
+
+    function a() {
+        log("a")
+    }
+    function b() {
+        log("b")
+    }
+    function c() {
+        log("c")
+    }
+</script>
+
+<script>
+    var jsonObject;
+    var _round = 1;
+
+    $.getJSON("test.json", function(json) {
+        jsonObject = json;
+    });
+
+    function round() {
+        if(jsonObject[_round] !== undefined){
+            summonList = jsonObject[_round];
+
+            log(summonList)
+
+            for(let functionName in summonList){
+                log(summonList[functionName])
+                window[summonList[functionName]]("");
+            }
+
+            return true;
+        }
+        return false;
+    }
+
+</script>
+

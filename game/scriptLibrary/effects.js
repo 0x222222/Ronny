@@ -19,5 +19,5 @@ function removeVignette() {
 }
 
 function test() {
-    log(test)
+    log("test")
 }

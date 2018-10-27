@@ -9,6 +9,36 @@
     animation: rotateHueLittle 1s infinite alternate;
 }
 
+#gameboxOverlayer {
+    text-align: center;
+}
+
+#gameboxOverlayer a {
+    font-size: 6em;
+    color: rgba(255,255,255,0.84);
+    text-shadow: 4px 4px 8px black;
+    animation: fadeout 9s;
+    animation-fill-mode: forwards;
+    filter: opacity(0%);
+    animation-delay: 0.5s;
+}
+
+#gameboxOverlayer h1 {
+    font-size: 14em;
+    color: rgba(255,255,255,0.85);
+    text-shadow: 4px 4px 8px black;
+    animation: fadeout 10s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    filter: opacity(0%)
+}
+
+@keyframes fadeout {
+    0%{filter: opacity(0%)}
+    15%{filter: opacity(100%)}
+    70%{filter: opacity(100%)}
+    100%{filter: opacity(0%)}
+}
 
 #hud {
     position: fixed;

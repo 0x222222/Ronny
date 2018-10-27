@@ -36,12 +36,17 @@ function addHealth(value) {
 }
 
 function damage() {
+
+    //debug
+    _DB_lastDamage.push(["Round: "+_round,"Time: "+_time,"HP before: "+_hp,"Damage: "+_damage,"HP after: "+(_hp-_damage)]);
     _hp -= _damage;
+
 
     if(_hp<1){
         _hp = 0;
         death();
     }
+
     //document.getElementById("gamebox").style.boxShadow ="inset 0px 0px 1500px  red ";
     _lastDamage = _time;
     playDamageSound();
@@ -49,12 +54,18 @@ function damage() {
 }
 
 function damagePercentage(value) {
+
+    //debug
+    _DB_lastDamage.push(["Round: "+_round,", Time: "+_time,", HP before: "+_hp,", Damage: "+_damage*value/100,", HP after: "+(_hp-_damage*value/100)])
+
     _hp -= _damage*value/100;
 
     if(_hp<1){
         _hp = 0;
         death()
     }
+
+
     //document.getElementById("gamebox").style.boxShadow ="inset 0px 0px 1500px  red ";
     _lastDamage = _time;
     showHealth();
@@ -68,6 +79,7 @@ function damageIncrease() {
 function changeHp(value) {
     _hp += value;
 
+
     showHealth();
 
     if(_hp<1){
@@ -77,7 +89,7 @@ function changeHp(value) {
 }
 
 function showHealth() {
-    if (_hp === 0) {
+    if (_hp <= 0) {
         changeHealthbarLength(0);
         return true
     }
@@ -127,11 +139,12 @@ function changeHealthbarLength(health) {
     document.getElementById("debug0").innerHTML = " |Energy: "+_hp.toFixed(0);
     range = 0;
     overload = false;
+    
 
     if(health<=10&&health>=0){
         range = health.toFixed(0);
     }
-    if(health<0){
+    if(health<=0){
         range = 0;
     }
     if(_hp>1000){
@@ -144,6 +157,7 @@ function changeHealthbarLength(health) {
     for(i=0;i<range;i++){
         document.getElementById("healthbar"+i).style.backgroundColor = color;
     }
+
     for(i=range;i<10;i++){
         document.getElementById("healthbar"+i).style.backgroundColor = "transparent";
     }

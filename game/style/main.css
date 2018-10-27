@@ -79,7 +79,7 @@ body {
     z-index: 0;
     background-size: cover;
     animation: rotate 1s linear infinite ;
-
+    box-shadow: 0 0 10px darkgoldenrod;
 }
 
 /*noinspection CssUnusedSymbol*/
@@ -177,4 +177,16 @@ body {
     background-repeat: no-repeat;
     position: fixed;
     animation: rotate linear infinite 8s;
+}
+
+.debuff {
+    animation: debuff 3s infinite, rotate 1s infinite;
+    background-size: cover;
+}
+
+@keyframes debuff {
+    0% {filter: hue-rotate(0deg)}
+    80% {filter: hue-rotate(0deg)}
+    81% {filter: hue-rotate(-180deg)}
+    100% {filter: hue-rotate(0deg)}
 }

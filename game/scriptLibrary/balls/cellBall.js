@@ -5,14 +5,23 @@ cellBalls = [];
 
 
 
-function createCellBall() {
+function createCellBall(preDefSize) {
 
+    let size = 0;
+
+    if(preDefSize===""){
+        size = 40;
+    } else {
+        size =  parseInt(preDefSize)
+    }
 
     let div = document.createElement("div");
     div.id = "cellBall"+(cellBalls.length);
     div.className = "cellBall";
+    div.style.height = size+"px";
+    div.style.width = size+"px";
     document.getElementById("gamebox").appendChild(div);
-    spawnSide("cellBall"+(cellBalls.length));
+    spawnLeftRight("cellBall"+(cellBalls.length));
     let i = cellBalls.length;
     cellBalls.push(
         [
@@ -21,10 +30,10 @@ function createCellBall() {
             /*2*/ran(0,2),
             /*3*/document.getElementById(("cellBall"+i)).offsetTop,
             /*4*/document.getElementById(("cellBall"+i)).offsetLeft,
-            /*5*/document.getElementById(("cellBall"+i)).offsetWidth,
-            /*6*/document.getElementById(("cellBall"+i)).offsetHeight,
-            /*7*/_CellBallSpeed,//Speed
-            /*8*/_time,
+            /*5*/ size,
+            /*6*/ size,
+            /*7*/ _CellBallSpeed,//Speed
+            /*8*/ _time,
         ]
     );
 }
@@ -87,6 +96,8 @@ function moveCellBall() {
         cellBalls[i][4] += ver;
 
 
+        //apply move
+
         document.getElementById("cellBall"+i).style.top  = Math.round(cellBalls[i][3]) + "px";
         document.getElementById("cellBall"+i).style.left = Math.round(cellBalls[i][4]) + "px";
 
@@ -104,7 +115,9 @@ function moveCellBall() {
         rad12 = (widthPlayer/2 + movWidth/2);
 
         if(distanceG2 < rad12){
-            damagePercentage(cellBalls[i][5]);
+            let possibleDamage = cellBalls[i][5]/2;
+            if(possibleDamage>100){possibleDamage=100}
+            damagePercentage(possibleDamage);
         }
 
     }
@@ -142,10 +155,6 @@ function testForMerge() {
 
                     BtoA = 1/(A1+A2)*A2;
 
-                    if(widthA>100){
-                        debugger
-                    }
-
                     let degA =calcDeg(cellBalls[i][1],cellBalls[i][2],cellBalls[i][0]),
                         degB =calcDeg(cellBalls[a][1],cellBalls[a][2],cellBalls[a][0]);
 
@@ -172,7 +181,7 @@ function mergeCellBall(top, left, size, id1, id2, lowDeg, topDirection, leftDire
 
 
 
-    console.log(lowDeg+" | " + topDirection +" | " + leftDirection);
+    //console.log(lowDeg+" | " + topDirection +" | " + leftDirection);
 
     let div = document.createElement("div");
     div.id = "cellBall"+(cellBalls.length);
@@ -192,7 +201,7 @@ function mergeCellBall(top, left, size, id1, id2, lowDeg, topDirection, leftDire
             /*4*/left,
             /*5*/size,
             /*6*/size,
-            /*7*/newSpeed,
+            /*7*/_CellBallSpeed,
             /*8*/_time,
         ]
     );

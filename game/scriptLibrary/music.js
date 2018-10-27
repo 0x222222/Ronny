@@ -58,11 +58,18 @@ function playEffect(effect) {
     }
 }
 
-_lastDamageSound = 0;
+
 
 function playDamageSound(){
     if(_lastDamageSound+200<_time){
         _lastDamageSound = _time;
         playEffect("damage");
+    }
+}
+
+function playBounceSound(){
+    if(_lastBounceSound+200<_time){
+        _lastBounceSound = _time;
+        playEffect("bounce");
     }
 }
