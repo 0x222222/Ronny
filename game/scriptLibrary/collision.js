@@ -1,9 +1,11 @@
 //collison between 2 balls/spaceship
 function collsionRound(obj1, obj2) {
-
     rad1 = parseInt(document.getElementById(obj1).offsetWidth/2);
-    rad2 = parseInt(document.getElementById(obj2).offsetWidth/2);
-
+    if(obj2==="player"){
+        rad2 = _playerSize/2
+    } else {
+        rad2 = parseInt(document.getElementById(obj2).offsetWidth/2);
+    }
 
     rad12 = (rad1 +rad2);
 

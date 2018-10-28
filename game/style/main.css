@@ -167,16 +167,28 @@ body {
     }
 }
 
+/*noinspection CssUnusedSymbol*/
 .pushBall{
     border-radius: 50%;
     box-shadow: 0 0 120px gray;
     width: 100px;
     height: 100px;
-    background-image: url("../assets/pushBall.png");
     background-size: cover;
-    background-repeat: no-repeat;
+    background: url("../assets/pushBall.png") no-repeat;
     position: fixed;
-    animation: rotate linear infinite 8s;
+    background-size: cover;
+    animation: rotate linear infinite 8s, pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    0%{
+        width: 100px;
+        height: 100px;
+    }
+    100% {
+        width: 80px;
+        height: 80px;
+    }
 }
 
 .debuff {

@@ -1,37 +1,42 @@
 function healStandard() {
-    if(_hp<_hpMax){
-        _hp += _hpAmount*2;
+    if(_standardHeal){
+        if(_hp<_hpMax){
+            _hp += _hpAmount*2;
 
-        if(_hp > _hpMax){
-            _hp = _hpMax;
+            if(_hp > _hpMax){
+                _hp = _hpMax;
+            }
         }
+
+
+        if(_hpAmount>12){_hpAmount--;
+        }
+
+        if(_hpAmount%6===0&&_hpAmount!==60&&_hpReg!==3){
+            _hpReg--;
+        }
+
+        showHealth();
     }
-
-
-    if(_hpAmount>12){_hpAmount--;
-    }
-
-    if(_hpAmount%6===0&&_hpAmount!==60&&_hpReg!==3){
-        _hpReg--;
-    }
-
-    showHealth();
 }
 
-function additionHeal() {
-    if(_hp<_hpMax){
-        _hp += (60-_hpAmount);
-        hp = _hp.round;
+function additionalHeal() {
+    if(_additionalHeal){
+        if(_hp<_hpMax){
+            _hp += (60-_hpAmount);
+            hp = _hp.round;
 
-        if(_hp > _hpMax){
-            _hp = _hpMax;
+            if(_hp > _hpMax){
+                _hp = _hpMax;
+            }
         }
+        showHealth();
     }
-    showHealth();
 }
 
 function addHealth(value) {
    _hp += value;
+    showHealth();
     showHealth();
 }
 
@@ -77,11 +82,21 @@ function damageIncrease() {
 }
 
 function changeHp(value) {
-    _hp += value;
+    _hp += parseInt(value);
 
 
     showHealth();
 
+    if(_hp<1){
+        _hp = 0;
+        death()
+    }
+}
+
+
+function setHealth(value) {
+    _hp = parseInt(value);
+    showHealth();
     if(_hp<1){
         _hp = 0;
         death()
@@ -164,7 +179,11 @@ function changeHealthbarLength(health) {
     if(overload){
         document.getElementById("healthtableOverlayer").style.boxShadow = "0 -10px 20px yellow";
     } else {
-        document.getElementById("healthtableOverlayer").style.boxShadow = "";
+        if(_hp<100){
+            document.getElementById("healthtableOverlayer").style.boxShadow = "0 -10px 20px red";
+        } else {
+            document.getElementById("healthtableOverlayer").style.boxShadow = "";
+        }
     }
 }
 

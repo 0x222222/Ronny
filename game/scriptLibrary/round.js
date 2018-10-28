@@ -40,7 +40,7 @@ function round() {
     }
 
     if(_round%10===0&&_round!==0){
-        additionHeal();
+        additionalHeal();
     }
 
     //TEMP

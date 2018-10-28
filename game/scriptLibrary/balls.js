@@ -410,10 +410,11 @@ function movePushBall() {
 
 
         //test for collision
+        let size = document.getElementById("pushBall"+i).offsetHeight
 
         if(collsionRound(("pushBall"+i),"player")){
-            _bounceVertical = ver*4;
-            _bounceHorizontal = hor*4;
+            _bounceVertical = ver*4/100*size;
+            _bounceHorizontal = hor*4/100*size;
             for(l=0;l<20;l++){
                 if(pushBalls[i][3]>10){
                     pushBalls[i][3]--;

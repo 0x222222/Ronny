@@ -46,6 +46,9 @@ _inviBallSpeed              = 10;
 _contactBallSpeed           = 30;
 _ballG2Speed                = 18;
 _CellBallSpeed              = 15;
+_playerSize                 = 60;
+_standardHeal               = true;
+_additionalHeal             = true;
 
 
 //runtime
@@ -71,9 +74,10 @@ _windY                      = 0;
 _menue                      = false;
 _posTopPlayer               = 0;
 _posLeftPlayer              = 0;
-_lastDamageSound            = 0;
-_lastBounceSound            = 0;
+_lastDamageSound            = -100000;
+_lastBounceSound            = -100000;
 _playerSpeedReduce          = 0;
+_lastSpawn                  = -100000;
 
 //effects
 

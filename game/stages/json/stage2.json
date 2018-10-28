@@ -1,9 +1,10 @@
 {
-  "title":"UNNAMED",
-  "description":"need configuration",
+  "title":"Hardcore",
+  "description":"1 Health. No Regenartion. Only Powerups help.",
   "spawnList": {
     "0":[
-      "createBall"
+      "createBall",
+      "setHealth(1)"
     ],
     "2":[
       "createBall"
@@ -57,6 +58,10 @@
     "400":[
       "createPushBall"
     ]
+  },
+  "variable":{
+    "_standardHeal":false,
+    "_additionalHeal":false
   }
 }
 

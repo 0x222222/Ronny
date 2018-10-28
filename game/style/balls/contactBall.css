@@ -1,5 +1,5 @@
 .contactBall {
-    animation: rotate 4s infinite alternate;
+    animation: rotate 0.2s linear infinite, contactBall 4s infinite alternate;
     border-radius: 50%;
     box-shadow: 0 0 50px black;
     background-image: url("../../assets/contactBall.png");
@@ -7,4 +7,13 @@
     height: 70px;
     position: fixed;
     content: '';
+}
+
+@keyframes contactBall {
+    0%{
+        box-shadow: 0 0 50px black, 0 0 0 red inset;
+    }
+    100%{
+        box-shadow: 0 0 50px black, 0 0 50px red inset;
+    }
 }

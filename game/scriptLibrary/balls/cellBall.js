@@ -206,4 +206,3 @@ function mergeCellBall(top, left, size, id1, id2, lowDeg, topDirection, leftDire
         ]
     );
 }
-

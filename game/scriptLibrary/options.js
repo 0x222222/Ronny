@@ -1,7 +1,8 @@
 let jsonObject;
 
 async function getJson() {
-    jsonObject = await $.getJSON("stages/json/stage0.json");
+    jsonObject = await $.getJSON("stages/json/stage4.json");
+    //jsonObject = await $.getJSON("stages/json/stage"+ran(0,4)+".json");
     applyOptions();
     game();
 }
@@ -34,7 +35,7 @@ function spawnList() {
                 }
 
                 if(functionName.search("create")!==-1){
-                    playEffect("create")
+                    playSpawnSound()
                 }
 
                 window[functionName](argument);
@@ -68,7 +69,7 @@ function spawnList() {
                 }
 
                 if (functionName.search("create") !== -1) {
-                    playEffect("create")
+                    playSpawnSound()
                 }
 
                 window[functionName](argument);
@@ -78,6 +79,12 @@ function spawnList() {
 }
 
 function applyOptions() {
-    document.getElementById("fadeoutTitle").innerText = jsonObject["title"],
+    //display title and description
+    document.getElementById("fadeoutTitle").innerText = jsonObject["title"];
     document.getElementById("fadeoutDescription").innerText = jsonObject["description"]
+
+    //applay variable changes
+    for(let variableName in jsonObject["variable"]){
+        window[variableName]= jsonObject["variable"][variableName];
+    }
 }
