@@ -287,3 +287,19 @@ function posPlayerVariable() {
     _posTopPlayer =document.getElementById("player").offsetTop;
     _posLeftPlayer=document.getElementById("player").offsetLeft;
 }
+
+function windX(value) {
+    _windX = parseFloat(value)
+}
+
+function windY(value) {
+    _windY = parseFloat(value)
+}
+
+function applyFilterToBackground(filter) {
+    document.getElementById("gamebox").style.filter = filter
+}
+
+function setBackgroundImage(url) {
+    document.getElementById("gamebox").style.backgroundImage = "url(\"assets/"+url+"\")"
+}

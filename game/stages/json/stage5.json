@@ -1,21 +1,14 @@
 {
-  "title":"Big Ball",
-  "description":"One huge ball which blocks the half map. Use your teleport (\"C\")",
+  "title":"Say hello to the beast",
+  "description":"The Beastball join the battle.",
   "spawnList": {
-      "0":[
-        "createCellBall(1000)"
-      ],
-      "2":[
-        "createBall"
+      "0": [
+        "setBackgroundImage(backgroundStage5.png)"
       ],
       "3":[
         "createFastBall"
       ],
-      "4":[
-        "createBall"
-      ],
       "6":[
-        "createBall",
         "createFastBall"
       ],
       "8":[
@@ -23,9 +16,6 @@
       ],
       "9":[
         "createFastBall"
-      ],
-      "10":[
-        "createBall"
       ],
       "12":[
         "createFastBall"
@@ -36,8 +26,9 @@
       "80":[
         "createInfinityBall"
       ],
-      "120":[
-        "createContactBall"
+      "100":[
+        "createBeastBall",
+        "createBeastBall"
       ],
       "180":[
         "createPushBall"
@@ -59,7 +50,10 @@
       ]
   },
   "spawnListModulus":{
-
+      "100,0":[
+        "createBeastBall",
+        "createBeastBall"
+      ]
   },
   "variable":{
 

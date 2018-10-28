@@ -28,7 +28,7 @@ function round() {
     }
 
     if(_round%_speedTimeIncreaseStand===0){
-        gameSpeedStanding()
+        //gameSpeedStanding()
     }
 
     //if(_round%5===0){

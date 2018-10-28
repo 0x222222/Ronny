@@ -2,7 +2,7 @@ var shots = [];
 
 
 
-function shot() {
+function shot(hor, ver) {
     if(_mouseclickRight&&shots.length<_maxShots){
         playEffect("shot");
         let div = document.createElement("div");
@@ -15,10 +15,7 @@ function shot() {
         movePlayerHor = 0;
         movePlayerVer = 0;
 
-        if(keyStatus.w){movePlayerHor += 2}
-        if(keyStatus.a){movePlayerVer += 2}
-        if(keyStatus.s){movePlayerHor += 2}
-        if(keyStatus.d){movePlayerVer += 2}
+
 
         up = 0;
         side = 0;
@@ -38,8 +35,8 @@ function shot() {
                 ((1/(Math.abs(PT()-_mouseY)+Math.abs(PL()-_mouseX)))*(Math.abs(PT()-_mouseY))*4+Math.random())/5,
                 up,
                 side,
-                movePlayerHor,
-                movePlayerVer,
+                hor,
+                ver,
                 _round
             ]
         );
@@ -83,10 +80,8 @@ function moveShot() {
                 ver = _shootSpeed * -1 * (1 - shots[i][0])
             }
 
-            if(shots[i][3]===1){hor-=5}
-            if(shots[i][3]===2){hor+=5}
-            if(shots[i][4]===1){ver-=5}
-            if(shots[i][4]===2){ver+=5}
+            hor += shots[i][3]/5;
+            ver += shots[i][4]/5;
 
             for(m=0;m<fastBalls.length;m++){
                 if(collsionRound("shot"+i,"fastBall"+m)){

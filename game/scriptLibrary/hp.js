@@ -81,8 +81,12 @@ function damageIncrease() {
     _damage += _damageIncrease;
 }
 
+function setDamage(value) {
+    _damage = parseFloat(value);
+}
+
 function changeHp(value) {
-    _hp += parseInt(value);
+    _hp += parseFloat(value);
 
 
     showHealth();
@@ -95,7 +99,7 @@ function changeHp(value) {
 
 
 function setHealth(value) {
-    _hp = parseInt(value);
+    _hp = parseFloat(value);
     showHealth();
     if(_hp<1){
         _hp = 0;

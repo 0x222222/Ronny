@@ -1,92 +1,38 @@
 {
-  "title":"Pinball",
-  "description":"Playing nearly the classic pinball. But you are the ball.",
+  "title":"Rushmode",
+  "description":"Rushing is the key to success. Health reset every 10 seconds to 10. So you can only rush 50% of the time.",
   "spawnList": {
       "0":[
-        "createPushBall",
-        "createPushBall",
-        "createPushBall",
-        "createPushBall",
-        "createPushBall",
-        "createPushBall",
-        "createPushBall",
         "createFollowBall",
         "createFollowBall"
       ],
-      "10":[
-        "createContactBall",
-        "createContactBall",
-        "createContactBall",
-        "createContactBall",
-        "createContactBall"
+      "5":[
+        "createPushBall",
+        "createPushBall"
       ],
-      "35":[
-        "createFollowBall"
-      ],
-      "50":[
-        "createInviBall",
-        "createInfinityBall"
-      ],
-      "100":[
+      "30":[
+        "windX(10)",
         "createInviBall"
       ],
-      "150":[
-        "createInviBall",
-        "createInfinityBall"
-      ],
-      "200":[
-        "createInviBall"
-      ],
-      "250":[
-        "createInviBall",
-        "createInfinityBall"
-      ],
-      "300":[
-        "createInviBall"
-      ],
-      "350":[
-        "createInviBall",
-        "createInfinityBall"
-      ],
-      "400":[
-        "createInviBall"
-      ],
-      "420":[
-        "createContactBall"
-      ],
-      "440":[
-        "createContactBall"
-      ],
-      "460":[
-        "createContactBall"
-      ],
-      "480":[
-        "createContactBall"
-      ],
-      "500":[
-        "createContactBall"
-      ],
-      "520":[
-        "createContactBall"
-      ],
-      "540":[
-        "createContactBall"
-      ],
-      "560":[
-        "createContactBall"
-      ],
-      "580":[
-        "createContactBall"
-      ],
-      "600":[
-        "createContactBall",
-        "createContactBall",
-        "createContactBall",
-        "createContactBall"
+      "40":[
+        "windX(0)"
       ]
   },
+  "spawnListModulus":{
+    "10,0":[
+        "createCellBall",
+        "setHealth(10)",
+        "setDamage(0.5)"
+      ],
+    "30,0":[
+      "createFastBall"
+    ]
+  },
   "variable":{
-
+    "_playerSpeed":4,
+    "_rushModeBoost":6,
+    "_standardHeal":false,
+    "_additionalHeal":false
   }
 }
 

@@ -42,7 +42,7 @@ function movePlayer() {
 
 
     move(movePlayerHor+_bounceHorizontal+_windX, movePlayerVer+_bounceVertical+_windY, "player");
-
+    shot(movePlayerHor+_bounceHorizontal+_windX, movePlayerVer+_bounceVertical+_windY);
 
 
     if(_bounceVertical!==0){
@@ -79,19 +79,7 @@ function movePlayer() {
 
     collisionBorderPlayer();
 
-    if(movePlayerHor === 0 && movePlayerVer === 0){
-        _lastMove = false;
-        if(_playerSpeedReduce<10){
-            _playerSpeed--;
-            _playerSpeedReduce++
-        }
-    } else {
-        _lastMove = true;
-        if(_playerSpeedReduce>0){
-            _playerSpeed++;
-            _playerSpeedReduce--
-        }
-    }
+    _lastMove = !(movePlayerHor === 0 && movePlayerVer === 0);
 
 
     //Background

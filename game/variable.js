@@ -31,7 +31,7 @@ _rushModeBoost              = 3;
 _teleportDistance           = 40;//standart speed * value
 _teleportEnergyCost         = 5;
 _teleportCooldown           = 1;
-_shootSpeed                 = 10; //Jump 3 time at once
+_shootSpeed                 = 15; //Jump 3 time at once
 _maxShots                   = 6;
 _infinityBallSpeed          = 25;
 _infinityAmount             = 1;
@@ -76,7 +76,6 @@ _posTopPlayer               = 0;
 _posLeftPlayer              = 0;
 _lastDamageSound            = -100000;
 _lastBounceSound            = -100000;
-_playerSpeedReduce          = 0;
 _lastSpawn                  = -100000;
 
 //effects

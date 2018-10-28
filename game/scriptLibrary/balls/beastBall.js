@@ -33,9 +33,9 @@ function moveBeastBall() {
 
             if( beastBalls[i][3]===-2){
                 beastBalls[i][3]= 8-ran(0,5)+_round;
-                beastBalls[i][0]= Math.random().toFixed(3)/2+0.25;
-                beastBalls[i][1]= ran(0,1);
-                beastBalls[i][2]= ran(0,1);
+                //beastBalls[i][0]= Math.random().toFixed(3)/2+0.25;
+                //beastBalls[i][1]= ran(0,1);
+                //beastBalls[i][2]= ran(0,1);
                 redirectBeastBalls(i);
                 _beastBallSpeed = 30;
             }
@@ -134,9 +134,9 @@ function moveBeastBall() {
         if(_round&&beastBalls[i][4]===2){
             if( beastBalls[i][3]===-2){
                 beastBalls[i][3]= 1+_round;
-                beastBalls[i][0]= Math.random().toFixed(3)/2+0.25;
-                beastBalls[i][1]= ran(0,1);
-                beastBalls[i][2]= ran(0,1);
+                //beastBalls[i][0]= Math.random().toFixed(3)/2+0.25;
+                //beastBalls[i][1]= ran(0,1);
+                //beastBalls[i][2]= ran(0,1);
                 redirectBeastBalls(i);
                 _beastBallSpeed = 10;
             }
