@@ -81,7 +81,6 @@ function movePlayer() {
 
     _lastMove = !(movePlayerHor === 0 && movePlayerVer === 0);
 
-
     //Background
 
     pt = PT();

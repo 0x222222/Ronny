@@ -6,6 +6,8 @@ function getRound() {
 }
 
 function round() {
+    gameSpeedStanding();
+
     _score += 15*(1+_round/50)+2*_hp/1000+10/_gameSpeed;
 
     document.getElementById("time").innerHTML = " |Round: "+_round;

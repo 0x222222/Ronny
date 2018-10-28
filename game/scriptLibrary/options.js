@@ -1,8 +1,8 @@
 let jsonObject;
 
 async function getJson() {
-    //jsonObject = await $.getJSON("stages/json/stage5.json");
-    jsonObject = await $.getJSON("stages/json/stage"+ran(0,5)+".json");
+    jsonObject = await $.getJSON("stages/json/stage0.json");
+    //jsonObject = await $.getJSON("stages/json/stage"+ran(0,5)+".json");
     applyOptions();
     game();
 }
@@ -35,7 +35,7 @@ function spawnList() {
                 }
 
                 if(functionName.search("create")!==-1){
-                    playSpawnSound()
+                    playCreateSound()
                 }
 
                 window[functionName](argument);
@@ -69,7 +69,7 @@ function spawnList() {
                 }
 
                 if (functionName.search("create") !== -1) {
-                    playSpawnSound()
+                    playCreateSound()
                 }
 
                 window[functionName](argument);

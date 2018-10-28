@@ -61,7 +61,7 @@ function damage() {
 function damagePercentage(value) {
 
     //debug
-    _DB_lastDamage.push(["Round: "+_round,", Time: "+_time,", HP before: "+_hp,", Damage: "+_damage*value/100,", HP after: "+(_hp-_damage*value/100)])
+    _DB_lastDamage.push(["Round: "+_round,"Time: "+_time,"HP before: "+_hp,"Damage: "+_damage*value/100,"HP after: "+(_hp-_damage*value/100)])
 
     _hp -= _damage*value/100;
 

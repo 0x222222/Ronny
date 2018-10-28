@@ -74,9 +74,9 @@ function playBounceSound(){
     }
 }
 
-function playSpawnSound(){
+function playCreateSound(){
     if(_lastSpawn+200<_time){
         _lastSpawn = _time;
-        playEffect("spawn");
+        playEffect("create");
     }
 }
