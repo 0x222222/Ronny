@@ -33,7 +33,7 @@ function movePlayer() {
         changeHp(-_rushModeEnergyCost);
     }
     //jump
-    if(keyStatus.c&&_lastTelepor+_teleportCooldown<_round&&!keyStatus.e&&_hp>_teleportEnergyCost+1){
+    if(keyStatus.c&&_lastTelepor+_teleportCooldown<_round&&_hp>_teleportEnergyCost+1){
         movePlayerHor = movePlayerHor*_teleportDistance;
         movePlayerVer = movePlayerVer*_teleportDistance;
         changeHp(-_teleportEnergyCost);

@@ -48,17 +48,22 @@ var keyStatus = {
     F10: false,
     F11: false,
     F12: false,
+
+    //Special
+
+    SP_SHIFT: false,
 };
 
 document.addEventListener('keydown', function(event) {
 document.onkeydown = document.onkeyup = document.onkeypress = handle;
 function handle(e) {
 
+    keyStatus.SP_SHIFT = e.shiftKeyshiftKey;
 
 
     if(e.type === "keypress") {
 
-        keyStatus[e.key] = true;
+        keyStatus[e.key.toLowerCase()] = true;
         document.getElementById("debugExtend0").innerHTML = "last down: "+e.key;
 
         if(e.key==="ArrowUp"  ){keyStatus.w = true}
@@ -72,7 +77,7 @@ function handle(e) {
         if(e.key==="Escape"){
             toggleMenu()
         }
-        if((e.key ==="r"&&!_live)||(e.key ==="r"&&_live&&endscreen.style.display !== "none"&&_live&&endscreen.style.display !== "")){
+        if((e.key.toLowerCase() ==="r"&&!_live)||(e.key.toLowerCase() ==="r"&&_live&&endscreen.style.display !== "none"&&_live&&endscreen.style.display !== "")){
             window.open("game.html","_self")
         }
         if(keyStatus.F8&&keyStatus.F9){
@@ -82,19 +87,19 @@ function handle(e) {
         specialInputDown(e.key);
     }
     if(e.type === "keyup") {
-        keyStatus[e.key] = false;
+        keyStatus[e.key.toLowerCase()] = false;
 
         document.getElementById("debugExtend1").innerHTML = "last up: "+e.key;
 
-        if(e.key==="ArrowUp"   ||e.key==="Shift"){keyStatus.w = false}
+        if(e.key==="ArrowUp"   ||e.key==="SP_SHIFT"){keyStatus.w = false}
 
-        if(e.key==="ArrowDown" ||e.key==="Shift"){keyStatus.s = false}
+        if(e.key==="ArrowDown" ||e.key==="SP_SHIFT"){keyStatus.s = false}
 
-        if(e.key==="ArrowLeft" ||e.key==="Shift"){keyStatus.a = false}
+        if(e.key==="ArrowLeft" ||e.key==="SP_SHIFT"){keyStatus.a = false}
 
-        if(e.key==="ArrowRight"||e.key==="Shift"){keyStatus.d = false}
-
+        if(e.key==="ArrowRight"||e.key==="SP_SHIFT"){keyStatus.d = false}
     }
+
     if(e.key===" "){
         if(e.type === "keypress") {
             keyStatus["space"] = true;

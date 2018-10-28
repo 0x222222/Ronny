@@ -57,6 +57,11 @@
       "400":[
         "createPushBall"
       ]
+  },
+  "spawnListModulus":{
+    "10,9":[
+      "createCellBall"
+    ]
   }
 }
 

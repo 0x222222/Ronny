@@ -8,7 +8,7 @@ async function getJson() {
 
 
 function spawnList() {
-     if(jsonObject!==undefined){
+    if(jsonObject!==undefined){
         if(jsonObject["spawnList"][_round] !== undefined){
             summonList = jsonObject["spawnList"][_round];
 
@@ -16,8 +16,6 @@ function spawnList() {
                 functionName = "",
                 occurrence,
                 stringLength;
-
-            log(summonList);
 
             for(let key in summonList){
                 argument = "";
@@ -42,9 +40,41 @@ function spawnList() {
                 window[functionName](argument);
             }
         }
-     }
+    }
 
-     return false;
+    for(let modulus in jsonObject["spawnListModulus"]){
+        if(_round%parseInt(modulus.split(",")[0])===parseInt(modulus.split(",")[1])){
+            summonList = jsonObject["spawnListModulus"][modulus];
+
+            let argument = "",
+                functionName = "",
+                occurrence,
+                stringLength;
+
+            for(let key in summonList) {
+                argument = "";
+                functionName = "";
+                occurrence = summonList[key].search("\\(");
+                stringLength = summonList[key].length;
+
+
+                if (occurrence !== -1) {
+                    argument = summonList[key].slice(occurrence + 1, length - 1);
+                    functionName = summonList[key].slice(0, occurrence);
+                    console.log(argument);
+                    console.log(functionName)
+                } else {
+                    functionName = summonList[key];
+                }
+
+                if (functionName.search("create") !== -1) {
+                    playEffect("create")
+                }
+
+                window[functionName](argument);
+            }
+        }
+    }
 }
 
 function applyOptions() {
