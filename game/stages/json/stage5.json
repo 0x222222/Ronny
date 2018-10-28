@@ -9,16 +9,16 @@
         "createFastBall"
       ],
       "6":[
-        "createFastBall"
+        "createInviBall"
       ],
       "8":[
         "createBall"
       ],
       "9":[
-        "createFastBall"
+        "createInfinityBall"
       ],
       "12":[
-        "createFastBall"
+        "createInfinityBall"
       ],
       "35":[
         "createFollowBall"
