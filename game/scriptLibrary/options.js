@@ -1,8 +1,8 @@
 let jsonObject;
 
 async function getJson() {
-    jsonObject = await $.getJSON("stages/json/stage0.json");
-    //jsonObject = await $.getJSON("stages/json/stage"+ran(0,5)+".json");
+    jsonObject = await $.getJSON("stages/json/stage6.json");
+    //jsonObject = await $.getJSON("stages/json/stage"+ran(1,6)+".json");
     applyOptions();
     game();
 }
@@ -26,9 +26,9 @@ function spawnList() {
 
 
                 if(occurrence!==-1){
-                    argument = summonList[key].slice(occurrence+1,length-1)
-                    functionName = summonList[key].slice(0,occurrence)
-                    console.log(argument)
+                    argument = summonList[key].slice(occurrence+1,length-1);
+                    functionName = summonList[key].slice(0,occurrence);
+                    console.log(argument);
                     console.log(functionName)
                 } else {
                     functionName = summonList[key];

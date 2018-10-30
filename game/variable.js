@@ -77,6 +77,7 @@ _posLeftPlayer              = 0;
 _lastDamageSound            = -100000;
 _lastBounceSound            = -100000;
 _lastSpawn                  = -100000;
+_powerupShieldLastHp        = 0;
 
 //effects
 

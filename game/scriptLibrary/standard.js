@@ -303,3 +303,7 @@ function applyFilterToBackground(filter) {
 function setBackgroundImage(url) {
     document.getElementById("gamebox").style.backgroundImage = "url(\"assets/"+url+"\")"
 }
+
+function playAnimationOnGamebox(animation) {
+    document.getElementById("gamebox").style.animation = animation
+}

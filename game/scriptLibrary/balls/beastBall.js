@@ -138,7 +138,7 @@ function moveBeastBall() {
                 //beastBalls[i][1]= ran(0,1);
                 //beastBalls[i][2]= ran(0,1);
                 redirectBeastBalls(i);
-                _beastBallSpeed = 10;
+                _beastBallSpeed = 15;
             }
 
             movHeigth = parseInt(document.getElementById(("beastBall"+i)).offsetHeight);

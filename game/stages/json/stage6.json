@@ -1,0 +1,27 @@
+{
+  "title":"LSD mode",
+  "description":"Enjoy the LSD simulator",
+  "spawnList": {
+      "0":[
+        "createFastBall",
+        "createFastBall",
+        "createFastBall",
+        "createFastBall",
+        "createFastBall",
+        "applyFilterToBackground(saturate(300%)blur(1px)contrast(200%))",
+        "playAnimationOnGamebox(akkordeon 20s infinite alternate)"
+      ]
+  },
+  "spawnListModulus":{
+    "20,0":[
+      "createFollowBall"
+    ],
+    "25,0":[
+      "createInfinityBall"
+    ]
+  },
+  "variable":{
+    "_FastBallSpeed":120,
+    "_FastBallRegneration":0
+  }
+}

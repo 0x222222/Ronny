@@ -74,6 +74,7 @@ function removeEffectArray() {
             removeEffect(buffs[i][1]);
             buffs.splice(i, 1);
             i--;
+            displayPowerups()
         }
     }
 }
@@ -98,7 +99,9 @@ function removeEffect(name) {
     if(name==="wind"){
         _windY = _windX = 0;
     }
-
+    if(name==="shield"){
+        setHealth(_powerupShieldLastHp+300)
+    }
 }
 
 function getEffectOfPowerup(number) {
@@ -112,8 +115,9 @@ function getEffectOfPowerup(number) {
                 addActiveEffect("powerup3", "Health Boost");
                 break;
             case 1:
-                _playerSpeed+=2;
-                addActiveEffect("powerup3", "Faster Player");
+                _powerupShieldLastHp = _hp;
+                setHealth(1000000);
+                addEffect("shield",8 , "Shield", "powerup3");
                 break;
             case 2:
                 _maxGamespeed+=2;
@@ -121,7 +125,7 @@ function getEffectOfPowerup(number) {
                 break;
             case 3:
                 _damage-=35;
-                addEffect("reduceDamage",10,"Reduce Damage","powerup3");
+                addEffect("reduceDamage",30,"Reduce Damage","powerup3");
                 break;
             case 4:
                 _hpReg=-2;

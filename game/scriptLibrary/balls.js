@@ -210,7 +210,7 @@ function moveFollowBall() {
 
 
             if(followBalls[i][4]<1){
-                followBalls[i][3] = _round-ran(-2,_followBallRegneration);
+                followBalls[i][3] = _round-ran(-5,_followBallRegneration);
             } else {
                 followBalls[i][4]--
             }

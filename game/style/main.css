@@ -180,7 +180,7 @@ body {
     animation: rotate linear infinite 8s, pulse 1s infinite alternate;
 }
 
-@keyframes pulse {
+@keyframes spin {
     0%{
         width: 100px;
         height: 100px;
@@ -201,4 +201,35 @@ body {
     80% {filter: hue-rotate(0deg)}
     81% {filter: hue-rotate(-180deg)}
     100% {filter: hue-rotate(0deg)}
+}
+
+
+@keyframes akkordeon {
+    0%{
+        transform: rotateX(0deg);
+    }
+    33%{
+        transform: rotateX(65deg);
+    }
+    66%{
+        transform: rotateX(0deg);
+    }
+    100%{
+        transform: rotateY(65deg);
+    }
+}
+
+@keyframes spinning {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    50%{
+        transform: rotateZ(0deg);
+    }
+    50.1% {
+        transform: rotateZ(180deg);
+    }
+    100%{
+        transform: rotateZ(180deg);
+    }
 }
